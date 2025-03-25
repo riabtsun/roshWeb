@@ -1,0 +1,32 @@
+.goods
+  background: linear-gradient(95deg, #32CDCD 0%, #0A8992 100%)
+  padding: 40px 0
+  @media screen and (min-width: 1200px)
+    padding: 100px 0
+  .accordion-button:not(.collapsed)
+    background: #7eeff7
+
+
+.subtitle--light,
+.colorTitle--light
+  color: $mainTextColor
+
+.btn-accordion
+  display: flex
+  padding: 0.7876875rem
+  justify-content: center
+  color: $mainTextColor
+  background: $primaryColor
+  border-radius: 15px
+  margin: 20px 0
+  text-decoration: none
+  cursor: pointer
+  transition: .3s
+  width: fit-content
+  &:hover
+    background: darken($primaryColor, 10%)
+    color: $mainTextColor
+
+.accordion-button:after
+  margin-left: auto
+  margin-right: 0

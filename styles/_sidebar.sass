@@ -1,0 +1,95 @@
+.menu-toggle 
+  position: fixed
+  right: 15px
+  top: 15px
+  width: 35px
+  height: 35px
+  text-align: center
+  color: #fff
+  background: rgba(52, 58, 64, 0.5)
+  line-height: 50px
+  z-index: 999
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  &__line
+    display: block
+    width: 14px
+    height: 2px
+    background: #fff
+    margin-bottom: 4px
+    transition: .3s
+    position: relative
+    &:last-child
+      margin-bottom: 0
+
+.menu-toggle.active
+  .menu-toggle__line
+    &:nth-child(1)
+      transform: rotate(45deg)
+      top: 3px
+    &:nth-child(2)
+      display: none
+    &:nth-child(3)
+      transform: rotate(-45deg)
+      bottom: 3px
+
+.rounded
+  border-radius: 0.25rem !important
+
+//main reason of to higher z-index is
+// large default z-index in leaflet map
+#sidebar-wrapper
+  position: fixed
+  z-index: 1001
+  right: 0
+  width: 250px
+  height: 100%
+  transition: all 0.4s ease 0s
+  transform: translateX(250px)
+  background: linear-gradient(92deg, #31CCCC 0.04%, #0C8D96 100.04%)
+  border-left: 1px solid rgba(255, 255, 255, 0.1)
+
+#sidebar-wrapper.active
+  right: 250px
+  width: 250px
+  transition: all 0.4s ease 0s
+
+.sidebar-nav
+  padding-top: 30px
+
+.sidebar-nav-item,
+.sidebar-brand
+  margin-bottom: 10px
+
+  a
+    display: inline-block
+    width: 100%
+    color: $mainTextColor
+    padding: 10px
+    font-size: 1rem
+    font-weight: 800
+    line-height: normal
+    text-decoration: none
+    transition: .3s color
+    &:hover
+      color: $primaryColor
+      background: rgba(255, 255, 255, 0.2)
+
+.scroll-to-top 
+  position: fixed
+  right: 15px
+  bottom: 15px
+  display: none
+  width: 35px
+  height: 35px
+  text-align: center
+  color: #fff
+  background: rgba(52, 58, 64, 0.5)
+  line-height: 50px
+  svg
+    width: 20px
+    height: 20px
+    position: relative
+    bottom: 7px

@@ -1,0 +1,47 @@
+@import "reset"
+@import "vars"
+@import "topSection"
+@import "hopeSection"
+@import "steps"
+@import "rules"
+@import "goods"
+@import "user-form"
+@import "botInfo"
+@import "locations"
+@import "faq"
+@import "footer"
+@import "sidebar"
+
+*
+  box-sizing: border-box
+
+body
+  font-family: "Montserrat", sans-serif
+  font-size: 16px
+
+.colorTitle--secondary
+  color: #0a8992
+  font-size: 1.8rem
+  font-weight: 900
+  line-height: normal
+  text-transform: uppercase
+  text-align: center
+  margin: 0 auto 20px auto
+  @media screen and (min-width: 768px)
+    font-size: 2.625rem
+
+.btn-color
+  border-radius: 8px
+  background: #0a8992
+  color: $mainTextColor
+  display: flex
+  justify-content: center
+  align-items: center
+  width: fit-content
+  &:hover
+    border: 1px solid $secondaryTextColor
+
+.modal-header
+  justify-content: space-between
+  .btn-close
+    margin: 0

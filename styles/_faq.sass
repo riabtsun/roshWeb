@@ -1,0 +1,51 @@
+.faq
+  padding: 40px 0
+  @media screen and (min-width: 1200px)
+    padding: 100px 0
+  &__wrap
+    display: flex
+    flex-direction: column
+    gap: 20px
+    flex-wrap: wrap
+    @media screen and (min-width: 1200px)
+      display: grid
+      grid-template-columns: 1fr 1fr 1fr
+      //grid-template-areas: "first second third" "fourth fifth third" "sixth seventh ninth" "eighth eighth eighth"
+      grid-template-areas: "first second fourth" "fifth second third" "sixth seventh eighth"
+  &__item
+    border-radius: 30px
+    background: linear-gradient(92deg, #31CCCC 0.04%, #0C8D96 100.04%)
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.15)
+    padding: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    &-text
+      color: $mainTextColor
+      font-size: 1rem
+      font-weight: 600
+      line-height: normal
+  &__item:nth-child(1)
+    grid-area: first
+    flex-direction: column
+  &__item:nth-child(2)
+    grid-area: second
+  &__item:nth-child(3)
+    grid-area: third
+  &__item:nth-child(4)
+    grid-area: fourth
+  &__item:nth-child(5)
+    grid-area: fifth
+  &__item:nth-child(6)
+    grid-area: sixth
+  &__item:nth-child(7)
+    grid-area: seventh
+  &__item:nth-child(8)
+    grid-area: eighth
+
+a.faq__item-text
+  transition: .3s color
+  &:hover
+    color: $primaryColor
+
+

@@ -1,0 +1,33 @@
+$mainTextColor: #fff
+$secondaryTextColor: #1e1e1e
+$primaryColor: #da1466
+$secondaryColor: #0a8992
+
+.colorTitle
+  color: $primaryColor
+  font-size: 4.25rem
+  font-weight: 800
+  letter-spacing: 2.04px
+
+.subtitle
+  font-size: 1.8125rem
+  font-weight: 900
+  line-height: normal
+  color: $secondaryColor
+
+.button
+  display: flex
+  padding: 0.7876875rem
+  justify-content: center
+  align-items: center
+  color: $mainTextColor
+  background: $primaryColor
+  border-radius: 15px
+  margin: 20px auto
+  text-decoration: none
+  cursor: pointer
+  transition: .3s
+  width: fit-content
+  &:hover
+    background: darken($primaryColor, 10%)
+

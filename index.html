@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="styles/bootstrap.rtl.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+          integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+  <link rel="stylesheet" href="styles/main.css">
+  <title>ROCHE</title>
+</head>
+<body>
+<a class="menu-toggle rounded" href="#">
+  <span class="menu-toggle__line"></span>
+  <span class="menu-toggle__line"></span>
+  <span class="menu-toggle__line"></span>
+</a>
+<nav id="sidebar-wrapper" class="">
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand"><a href="#page-top">З надією в майбутнє</a></li>
+    <li class="sidebar-nav-item"><a href="#hope">Головна</a></li>
+    <li class="sidebar-nav-item"><a href="#about">Як долучитися пацієнту?</a></li>
+    <li class="sidebar-nav-item"><a href="#services">Правила програми</a></li>
+    <li class="sidebar-nav-item"><a href="#preparat">Про препарати</a></li>
+    <li class="sidebar-nav-item"><a href="#regform">Форма реєстрації</a></li>
+    <li class="sidebar-nav-item"><a href="#mapa">Де придбати</a></li>
+    <li class="sidebar-nav-item"><a href="#left">Наявність в аптеках</a></li>
+    <li class="sidebar-nav-item"><a href="#contacts">Підтримка клієнта</a></li>
+  </ul>
+</nav>
+<section id="page-top" class="topSection">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row col-12 m-auto">
+        <img src="assets/images/Roche_logo.svg" alt="ROCHE Logo" class="mainLogo">
+        <h1 class="mainTitle">Шановні учасники,</h1>
+        <p class="mainText">
+          ТОВ «Рош Україна» дякує вам за довіру та інформує, що Програма підтримки пацієнтів "З надією в майбутнє"
+          завершиться 31 січня 2025 року.
+          Після закриття Програми всі препарати будуть доступні для придбання в аптечних мережах без додаткових умов.
+          Більш детальну інформацію ви можете дізнатись зателефонувавши на гарячу лінію: <a href="tel:+380800211103"
+                                                                                            class="button">0-800-211-103</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</section>
+<section id="hope" class="hope">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 d-flex hope-wrap">
+        <div class="col-sm-12 col-md-6">
+          <img src="assets/images/hope.jpg" alt="roche medicard visit card" class="visitCard">
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <h2 class="colorTitle">З надією в майбутнє</h2>
+          <p class="subtitle">програма підтримки пацієнтів</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="about" class="steps">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ul class="steps-list">
+          <li class="steps-list__item">
+            <div class="steps-list__img-wrap">
+              <img class="steps-list__img" src="assets/icons/doctoricon.svg" alt="doctor icon">
+            </div>
+            <div class="steps-list__info">
+              <h3 class="steps-list__title">Крок 1</h3>
+              <p class="steps-list__text">Після призначення лікарських засобів виробництва групи компаній Рош —
+                отримайте
+                у лікуючого лікаря картку для участі в програмі.</p>
+            </div>
+          </li>
+          <li class="steps-list__item">
+            <div class="steps-list__img-wrap">
+              <img class="steps-list__img" src="assets/icons/papericon.svg" alt="paper icon">
+            </div>
+            <div class="steps-list__info">
+              <h3 class="steps-list__title">Крок 2</h3>
+              <p class="steps-list__text">
+                <a href="#regform" class="steps-list__link">Зареєструйтеся</a> на сайті програми psp-roche.com.ua,
+                використовуючи унікальний код, вказаний на картці програми.</p>
+            </div>
+          </li>
+          <li class="steps-list__item">
+            <div class="steps-list__img-wrap">
+              <img class="steps-list__img" src="assets/icons/phoneicon.svg" alt="phone icon">
+            </div>
+            <div class="steps-list__info">
+              <h3 class="steps-list__title">Крок 3</h3>
+              <p class="steps-list__text">Отримайте SMS-повідомлення із кодом на номер мобільного телефону, вказаного
+                під час реєстрації.</p>
+            </div>
+          </li>
+          <li class="steps-list__item">
+            <div class="steps-list__img-wrap">
+              <img class="steps-list__img" src="assets/icons/pharmacyicon.svg" alt="pharmacy icon">
+            </div>
+            <div class="steps-list__info">
+              <h3 class="steps-list__title">Крок 4</h3>
+              <p class="steps-list__text">Предʼявіть код у будь-якій аптеці-учасниці програми та отримайте знижку згідно
+                з умовами програми.</p>
+            </div>
+          </li>
+        </ul>
+        <p class="steps-list__notation"><span class="steps-list__symbol">&#128712;</span> Будь ласка, збережіть код,
+          отриманий у SMS-повідомленні, оскільки він є багаторазовим. Картка учасника програми використовується один раз
+          для реєстрації.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="services" class="rules">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 rules__title">
+        <p class="subtitle">Правила, умови та порядок участі в програмі</p>
+        <h2 class="colorTitle">«З надією в майбутнє»</h2>
+      </div>
+      <div class="col-12">
+        <ol class="rules__list">
+          <li class="rules__list-item">Використовуючи картку учасника дисконтної програми (програми підтримки пацієнтів)
+            «З
+            надією в майбутнє» (надалі — Програма), особа, що використовує цю картку (надалі — Пацієнт) погоджується з
+            правилами, умовами та порядком участі в Програмі і всіма наступними змінами до них, що викладені на сайті
+            Програми (надалі - Правила Програми).
+          </li>
+          <li class="rules__list-item">Програма організована компанією ТОВ «Рош Україна» (далі – Організатор або Рош),
+            адміністрування та технічну підтримку Програми від імені Організатора здійснює Товариство з обмеженою
+            відповідальністю «Медікард» (надалі — компанія Медікард). Участь у Програмі є добровільною та безкоштовною.
+            Програма не передбачає сплати будь-яких платежів за реєстрацію у Програмі або участь у Програмі. Надання
+            інформаційних матеріалів про Програму та картки учасника Програми Пацієнту здійснюється безкоштовно. Мета
+            Програми — зробити лікарські засоби виробництва групи компаній Рош (Рош), що беруть участь у Програмі та
+            призначені лікуючим лікарем (далі - лікарський засіб Рош), більш доступними для Пацієнтів.
+          </li>
+          <li class="rules__list-item">Право на участь у Програмі має будь-який Пацієнт, який відповідає наступним
+            критеріям
+            Програми:
+            • Пацієнт повинен бути громадянином України або іноземцем чи особою без громадянства, який(а) на законних
+            підставах перебуває в Україні;
+            • Пацієнту призначено лікування лікарським засобом виробництва групи компаній Рош (далі - лікарський засіб
+            Рош), що бере участь у Програмі, що підтверджено відповідним рецептом (призначенням) лікаря, який бере
+            участь у Програмі,
+            • За умови досягнення фізичною особою (Пацієнтом) 18 років та повної дієздатності. Для фізичних осіб, які не
+            досягли 18 років або не мають повної дієздатності, участь у Програмі можлива лише через їх законних
+            представників. Застосування відповідного лікарського засобу має відповідати призначенню лікаря.
+          </li>
+          <li class="rules__list-item"> Картки для участі в Програмі надаються лікуючим лікарем Пацієнтам, які
+            відповідають
+            вимогам, що визначені в Правилах Програми. Картка є власністю Організатора. В разі не дотримання учасниками
+            Програми правил Програми, Картка може бути заблокована.
+          </li>
+          <li class="rules__list-item">
+            Картка учасника Програми — це дисконтна картка, що дозволяє зареєструватися на сайті Програми для отримання
+            знижки тільки на лікарські засоби Рош, що беруть участь у Програмі та імпортовані на митну територію України
+            Організатором (далі — «Лікарські засоби, що беруть участь у Програмі.
+          </li>
+          <li class="rules__list-item">
+            Дана картка активована для реєстрації на сайті Програми, і може бути використана Пацієнтом одразу після її
+            отримання. Для того, щоб у подальшому скористатися карткою і всіма правами, знижками в результаті її
+            використання, Пацієнт повинен пройти реєстрацію учасника Програми (далі - реєстрація) за допомогою
+            відповідного порталу реєстрації, що вказаний на картці або за допомогою телефонного дзвінка на гарячу лінію
+            Медікард. Пацієнт повинен надати наступні поля протягом реєстрації на порталі або за допомогою телефонного
+            дзвінка: “Номер картки”, “Діагноз”, "Призначений лікарський засіб та дозування", “ПІБ”, “дата народження”,
+            “стать”, “вибір міста”, “номер мобільного телефону”. Реєстрація на порталі або за допомогою телефонного
+            дзвінка на гарячу лінію означає, що Пацієнт згоден і зобов'язується дотримуватися Правил Програми, що
+            зазначені на сайті (далі - сайт Програми). Після реєстрації — на вказаний мобільний номер Пацієнт отримує
+            SMS-повідомлення із кодом, який потрібно надати аптекам-учасницям для отримання знижки на лікарські засоби
+            Рош, що беруть участь у Програмі та імпортовані на митну територію України Організатором (далі — «Лікарські
+            засоби, що беруть участь у Програмі). Про втрату картки учасника Програми або її пошкодження слід в
+            найкоротший можливий термін повідомляти Лікаря. При втраті SMS з кодом Пацієнту потрібно звернутися до
+            гарячої лінії Програми або повторно отримати SMS з кодом на сайті Програми
+          </li>
+          <li class="rules__list-item">
+            У разі, якщо Пацієнт не здійснив жодної покупки протягом двох місяців з моменту реєстрації, розуміється, що
+            Пацієнт не згоден з Правилами Програми і компанія Медікард має право на блокування картки. Картка може бути
+            знову активована після того, як Пацієнт звернувся на гарячу лінію.
+          </li>
+          <li class="rules__list-item">
+            Пацієнт не може мати більше однієї картки для участі в Програмі. Таким чином, Пацієнт може бути користувачем
+            тільки однієї картки на Лікарські засоби, що беруть участь у Програмі, та призначені йому лікарем, який бере
+            участь у Програмі. У випадку виявлення декількох карток учасників Програми, щодо яких виникає підозра про
+            приналежність їх одній фізичній особі (Пацієнту), компанія Медікард може на власний розсуд, без будь-якого
+            попередження, заблокувати підозрілі картки для користування.
+          </li>
+          <li class="rules__list-item">
+            Для зниження ризиків неправомірного використання карток Програми, встановлено обмеження максимальної
+            кількості (ліміт) Лікарських засобів, що беруть участь у Програмі, яку може придбати один учасник Програми
+            (Пацієнт) по зниженій вартості, використовуючи картку, протягом певного періоду. Організатор може змінювати
+            ліміти залежно від обставин та на власний розсуд. Пацієнти можуть дізнатися про такі ліміти зателефонувавши
+            за телефоном гарячої лінії.
+          </li>
+          <li class="rules__list-item">
+            Обмеження відповідальності.
+            Організатор Програми та його афілійовані особи за жодних умов не несуть відповідальність перед Пацієнтами,
+            іншими учасниками Програми за будь- які збитки, втрати, упущені можливості або вигоди, будь-які інші
+            негативні наслідки, як прямі, так і непрямі, що виникли у зв'язку з:
+            - Зупиненням, тимчасовим призупинення, припиненням Програми, а так само будь-якими змінами у Програмі, її
+            правилах та умовах;
+            - Затримкою доступу або збоями/переривами у доступі до Програми (в тому числі, при використанні картки
+            учасника Програми, доступі до будь-яких сервісів чи ресурсів Програми, до сервісу доступу до
+            SMS-повідомлення) для будь-якого або усіх учасників Програми;
+            - Збоєм, дефектом, помилкою програмного забезпечення або технічної апаратури, що впливає на можливість
+            використання Програми для будь-якого або усіх учасників Програми;
+            - Неможливістю відновити інформацію, що була втрачена або потенційно викривлена чи пошкоджена в результаті
+            будь-яких технічних несправностей, обставин поза розумним контролем, неправомірних дій будь-яких третіх
+            осіб;
+            - Неправомірними діями будь-яких третіх Сторін, зокрема, але не обмежуючись: шахрайські дії, фальсифікація,
+            тощо;
+            - Дією обставин, що знаходились поза розумним контролем, включно, але не обмежуючись: стихійні лиха, масові
+            заворушення, воєнні дії, тощо. Організатор Програми не несе відповідальності за будь-які затримки або
+            неможливість компанії Медікард виконувати свої зобов'язання згідно Правил Програми через механічні,
+            процесингові, телекомунікаційні чи інші технічні несправності, а також за дії аптеки-учасниці Програми та
+            /або за наявність у аптеці-учасниці Лікарського засобу, що бере участь в Програмі.
+          </li>
+          <li class="rules__list-item">Програма діє з 01.02.2023 р. до 31.01.2025 р. включно. Організатор залишає за
+            собою
+            право змінити строк дії Програми на власний розсуд.
+          </li>
+          <li class="rules__list-item">
+            Гаряча лінія Програми доступна за телефонним номером <a class="rules__item-link" href="tel:+380800211103">0
+            800 211 103</a> (дзвінки безкоштовні зі стаціонарних
+            телефонів на території України). Ця лінія адмініструється компанією Медікард, чиї оператори нададуть
+            відповіді на запитання Пацієнтів щодо Програми, зокрема, участі у Програмі, цілей, аптек-учасниць Програми,
+            точного переліку Лікарських засобів, що беруть участь у Програмі, та умов застосування й розміру знижок на
+            них, змін умов Програми, використання карток за Програмою. Час роботи гарячої лінії: з понеділка по
+            п'ятницю, з 9.00 до 18.00 години.
+          </li>
+          <li class="rules__list-item">Припинення участі у Програмі. Учасник Програми може за власним бажанням припинити
+            свою
+            участь у Програмі шляхом відповідного запиту компанії Медікард. Після отримання такого запиту участь
+            учасника Програми буде зупинено.
+            Компанія Медікард може в односторонньому порядку припинити участь будь-якого учасника (Пацієнта) у Програмі
+            з відповідним анулюванням його картки без будь-якого попередження у випадку, якщо на власний розсуд та
+            переконання компанії Медікард визначено, що учасник Програми порушив будь-яке положення Правил Програми,
+            або, що використання картки здійснюється пацієнтом з порушенням будь-якого положення Правил Програми, або,
+            що використання картки учасника здійснюються із зловживаннями чи з шахрайськими цілями чи з цілями введення
+            оману чи з будь-якими іншими сумнівними або неправомірними цілями.
+          </li>
+          <li class="rules__list-item">Програма проводиться на всій території України, крім тимчасово окупованих
+            територій і
+            території проведення Операції Об’єднаних Сил, в аптеках, які беруть участь у Програмі. Перелік аптек -
+            учасників Програми вказаний на сайті.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="preparat" class="goods">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <p class="subtitle subtitle--light">Препарати у програмі</p>
+        <h2 class="colorTitle colorTitle--light">Препарати які можливо придбати</h2>
+      </div>
+      <div class="col-12">
+        <div class="accordion" id="menu">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#item-2" aria-expanded="true">
+                Тецентрик (Tecentriq)
+              </button>
+            </h2>
+            <div id="item-2" class="accordion-collapse collapse" data-bs-parent="#menu" style="">
+              <div class="accordion-body">
+                <p>Tecentriq 1200 mg - Тецентрик®, концентрат для розчину для інфузій 1200мг/20мл, флакон №1</p>
+                <p><a class="btn btn-accordion btn-sm" target="_blank"
+                      href="https://assets.roche.com/f/182664/x/4472ae7fde/approved-18-07-2022.pdf">Детальний опис
+                  препарата</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- item-3 -->
+          <!-- item-5 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#item-5" aria-expanded="false">
+                Пер’єта® (Perjeta®)
+              </button>
+            </h2>
+            <div id="item-5" class="accordion-collapse collapse" data-bs-parent="#menu" style="">
+              <div class="accordion-body">
+                <p>• Perjeta 420 mg - Пер’єта®, концентрат для розчину для інфузій по 420 мг/ 14 мл у флаконі №1</p>
+                <p><a class="btn btn-accordion btn-sm" target="_blank"
+                      href="https://assets.roche.com/f/182664/x/0d174b37e5/approved-07-07-2022.pdf">Детальний опис
+                  препарата</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- item-6 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#item-6" aria-expanded="false">
+                Кадсила® (Kadcyla®)
+              </button>
+            </h2>
+            <div id="item-6" class="accordion-collapse collapse" data-bs-parent="#menu" style="">
+              <div class="accordion-body">
+                <p>• Kadcyla 100 mg - Кадсіла®, порошок для концентрату для&nbsp; розчину для інфузій по 100 мг у
+                  флаконі №1</p>
+                <p>• Kadcyla 160 mg - Кадсіла®, порошок для концентрату для&nbsp; розчину для інфузій по 160 мг у
+                  флаконі №1</p>
+                <p><a class="btn btn-accordion btn-sm" target="_blank"
+                      href="https://assets.roche.com/f/182664/x/49178dcb83/kadcyla-lpi-approved-25022023.pdf">Детальний
+                  опис препарата</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- item-7 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#item-7" aria-expanded="false">
+                Алекенза® (Alecensa®)
+              </button>
+            </h2>
+            <div id="item-7" class="accordion-collapse collapse" data-bs-parent="#menu" style="">
+              <div class="accordion-body">
+                <p>Alecensa®, капсули тверді по 150 мг №224</p>
+                <p><a class="btn btn-accordion btn-sm" target="_blank"
+                      href="https://assets.roche.com/f/182664/x/fed1071d88/alecensa-lpi-approved-25-02-2023.pdf">Детальний
+                  опис препарата</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- item-8 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#item-8" aria-expanded="false">
+                Окревус® (Ocrevus®)
+              </button>
+            </h2>
+            <div id="item-8" class="accordion-collapse collapse" data-bs-parent="#menu" style="">
+              <div class="accordion-body">
+                <p>Ocrevus 300 mg - Окревус®, концентрат для розчину для інфузій 300мг/10мл, флакон №1</p>
+                <p><a class="btn btn-accordion btn-sm" target="_blank"
+                      href="https://assets.roche.com/f/182664/x/569245a506/ocrevus-lpi-approved-14-01-2023.pdf">Детальний
+                  опис препарата</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- item-9 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#item-9" aria-expanded="false">
+                Газіва® (Gazyva®)
+              </button>
+            </h2>
+            <div id="item-9" class="accordion-collapse collapse" data-bs-parent="#menu" style="">
+              <div class="accordion-body">
+                <p>Gazyva 1000 - Газіва®, концентрат для розчину для інфузій по 1000 мг/40 мл у флаконі №1</p>
+                <p><a class="btn btn-accordion btn-sm" target="_blank"
+                      href="https://assets.roche.com/f/182664/x/2d0fda1795/approved-15-12-2022.pdf">Детальний опис
+                  препарата</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- item-10 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#item-10" aria-expanded="false">
+                Фесго®(Phesgo®)
+              </button>
+            </h2>
+            <div id="item-10" class="accordion-collapse collapse" data-bs-parent="#menu" style="">
+              <div class="accordion-body">
+                <p>• Фесго®, розчин для ін’єкцій, 1200 мг/600 мг у флаконі № 1</p>
+                <p>• Фесго®, розчин для ін’єкцій, 600 мг/600 мг у флаконі № 1</p>
+                <p><a class="btn btn-accordion btn-sm" target="_blank"
+                      href="https://assets.roche.com/f/182664/x/0f5fbd9fa8/_-_approved-29-08-2022.pdf">Детальний опис
+                  препарата</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#item-11" aria-expanded="false">
+                Полайві® (Polivy®)
+              </button>
+            </h2>
+            <div id="item-11" class="accordion-collapse collapse" data-bs-parent="#menu" style="">
+              <div class="accordion-body">
+                <p>• Polivy® 140 mg - Полайві®, порошок для концентрату для розчину для інфузій по 140 мг, по 1
+                  флакону</p>
+                <p>• Полайві, порошок для концентрату для розчину для інфузій по 30 мг, по 1 флакону</p>
+                <p><a class="btn btn-accordion btn-sm" target="_blank"
+                      href="https://assets.roche.com/f/182664/x/2fb3646b32/approved-15-03-2022.pdf">Детальний опис
+                  препарата</a></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="regform" class="user-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-lg-7 m-auto">
+        <h2 class="colorTitle--secondary">Форма реєстрації учасника програми</h2>
+        <form name="register" action="/api.psp.php" method="post" class="register-form" style="margin: 0 auto;">
+          <div class="form-group">
+            <label for="FormControlCARDCOD">Мій код який вказаний на картці</label>
+            <input id="FormControlCARDCOD" class="form-control form-decoration form-decorationform-control-sm"
+                   type="text"
+                   placeholder="Мій код який вказаний на картці" name="code" required="required" inputmode="text">
+          </div>
+          <div class="form-group">
+            <label for="FormControlPIB">Прізвище</label>
+            <input id="FormControlPIB" class="form-control form-decoration form-decorationform-control-sm" type="text"
+                   placeholder="Прізвище"
+                   name="middle_name" required="required"
+                   onkeyup="if (/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g.test(this.value)) this.value = this.value.replace(/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g,'')">
+          </div>
+          <div class="form-group">
+            <label for="FormControlPIB">Ім'я</label>
+            <input id="FormControlPIB" class="form-control form-decoration form-decorationform-control-sm" type="text"
+                   placeholder="Ім'я"
+                   name="first_name" required="required"
+                   onkeyup="if (/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g.test(this.value)) this.value = this.value.replace(/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g,'')">
+          </div>
+          <div class="form-group">
+            <label for="FormControlPIB">Ім'я по батькові</label>
+            <input id="FormControlPIB" class="form-control form-decoration form-decorationform-control-sm" type="text"
+                   placeholder="Ім'я по батькові"
+                   name="last_name" required="required"
+                   onkeyup="if (/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g.test(this.value)) this.value = this.value.replace(/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g,'')">
+          </div>
+          <div class="form-group">
+            <label for="FormControlPREPARAT">Призначений лікарський засіб та дозування</label>
+            <input type="hidden" name="product" value="">
+            <select class="form-control form-decoration form-decorationform-control-sm" id="FormControlPREPARAT"
+                    size="1">
+              <option value="default">Оберіть призначений лікарський засіб та дозування</option>
+              <!-- <option value="АВАСТИН-АЛЕКЕНЗА-ТЕЦЕНТРИК">Авастин®, концентрат  для розчину для інфузій по 100 мг/4 мл  у флаконі № 1</option>
+               <option value="АВАСТИН-АЛЕКЕНЗА-ТЕЦЕНТРИК">Авастин®, концентрат  для розчину для  інфузій по 400 мг/16  мл у флаконі № 1</option>-->
+              <option value="АЛЕКЕНЗА">Алекенза®, капсули тверді по 150 мг, №224</option>
+              <option value="ГАЗІВА">Газіва®, концентрат для розчину для інфузій по 1000 мг/40 мл у флаконі №1</option>
+              <!--<option value="ГЕРЦЕПТИН-КАДСІЛА">Герцептин®, розчин  для iн’єкцій по 600  мг/5мл у флаконі</option>-->
+              <option value="ГЕРЦЕПТИН-КАДСІЛА">Кадсіла®, порошок для концентрату для розчину для інфузій по 100 мг у
+                флаконі №1
+              </option>
+              <option value="ГЕРЦЕПТИН-КАДСІЛА">Кадсіла®, порошок для концентрату для розчину для інфузій по 160 мг у
+                флаконі №1
+              </option>
+              <!--<option value="МАБТЕРА">Мабтера®, розчин  для ін’єкцій 1400  мг/11,7 мл у флаконі  №1</option>-->
+              <option value="ОКРЕВУС">Окревус®, концентрат для розчину для інфузій 300мг/10мл, флакон №1</option>
+              <option value="ПЕР’ЄТА-ФЕСГО">Пер’єта®, концентрат для розчину для інфузій по 420 мг/ 14 мл у флаконі №1
+              </option>
+              <option value="ТЕЦЕНТРИК">Тецентрик®, концентрат для розчину для інфузій 1200мг/20мл, флакони №1</option>
+              <option value="ПОЛАЙВІ">Полайві, порошок для концентрату для розчину для інфузій по 140 мг, по 1 флакону
+              </option>
+              <option value="ПОЛАЙВІ">Полайві, порошок для концентрату для розчину для інфузій по 30 мг, по 1 флакону
+              </option>
+              <option value="ПЕР’ЄТА-ФЕСГО">Фесго, розчин для ін’єкцій, 600 мг/600 мг/20000 ОД, по 10 мл у флаконі №1
+              </option>
+              <option value="ПЕР’ЄТА-ФЕСГО">Фесго, розчин для ін'єкцій, 1200 мг/600 мг/30000 ОД по 15 мл розчину у
+                флаконі; по 1 флакону у картонній коробці
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="FormControlTESTER">Діагноз</label>
+            <select class="form-control form-decoration form-decorationform-control-sm" id="FormControlTESTER" size="1">
+              <option value="0" class="default">Оберіть діагноз</option>
+            </select>
+            <textarea name="diagnosis"
+                      placeholder="Будь ласка, вкажіть точний діагноз, як зазначено у виписаному вам рецепті. У випадку внесення неточного діагнозу, ми можемо зателефонувати вам для встановлення деталей."
+                      class="form-control form-decoration form-decorationform-control-sm"
+                      style="display: none;"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="FormControlEDGE">Мій вік</label>
+            <input id="FormControlEDGE" class="form-control form-decoration form-decorationform-control-sm" type="text"
+                   placeholder="Вкажіть Вашу дату народження" name="dob" required="required" inputmode="text">
+          </div>
+          <div class="form-group">
+            <label for="FormControlGEODATA_REGION">Оберіть область</label>
+            <select class="form-control form-decoration form-decorationform-control-sm" id="FormControlGEODATA_REGION"
+                    size="1">
+              <option value="default">Оберіть область</option>
+              <option value="a87ff679a2f3e71d9181a67b7542122c">Вінницька область</option>
+              <option value="da4fb5c6e93e74d3df8527599fa62642">Волинська область</option>
+              <option value="c4ca4238a0b923820dcc509a6f75849b">Дніпропетровська область</option>
+              <option value="d3d9446802a44259755d38e6d163e820">Донецька область</option>
+              <option value="2a38a4a9316c49e5a833517c45d31070">Житомирська область</option>
+              <option value="9b8619251a19057cff70779273e95aa6">Закарпатська область</option>
+              <option value="c20ad4d76fe97759aa27a0c99bff6710">Запорізька область</option>
+              <option value="f899139df5e1059396431415e770c6dd">Івано-Франківська область</option>
+              <option value="6512bd43d9caa6e02c990b0a82652dca">Київська область</option>
+              <option value="1afa34a7f984eeabdbb0a7d494132ee5">Кіровоградська область</option>
+              <option value="c51ce410c124a10e0db5e4b97fc2af39">Луганська область</option>
+              <option value="8f14e45fceea167a5a36dedd4bea2543">Львівська область</option>
+              <option value="c9f0f895fb98ab9159f51fd0297e236d">Миколаївська область</option>
+              <option value="e4da3b7fbbce2345d7772b0674a318d5">Одеська область</option>
+              <option value="eccbc87e4b5ce2fe28308fd9f2a7baf3">Полтавська область</option>
+              <option value="7647966b7343c29048673252e490f736">Рівненська область</option>
+              <option value="8613985ec49eb8f757ae6439e879bb2a">Сумська область</option>
+              <option value="aab3238922bcc25a6f606eb525ffdc56">Тернопільська область</option>
+              <option value="1679091c5a880faf6fb5e6087eb1b2dc">Харківська область</option>
+              <option value="ed3d2c21991e3bef5e069713af9fa6ca">Херсонська область</option>
+              <option value="33e75ff09dd601bbe69f351039152189">Хмельницька область</option>
+              <option value="eb160de1de89d9058fcb0b968dbbbd68">Чернігівська область</option>
+              <option value="6974ce5ac660610b44d9b9fed0ff9548">Чернівецька область</option>
+              <option value="2b44928ae11fb9384c4cf38708677c48">Черкаська область</option>
+            </select>
+            <input type="hidden" name="region" value="">
+          </div>
+          <div class="form-group">
+            <label for="FormControlGEODATA">Оберіть свій населений пункт</label>
+            <select name="city" class="form-control form-decoration form-decorationform-control-sm"
+                    id="FormControlGEODATA" size="1">
+              <option value="0" class="default">Оберіть населений пункт</option>
+            </select>
+            <textarea name="city_text" placeholder="Вкажіть свій населений пункт"
+                      class="form-control form-decoration form-decorationform-control-sm"
+                      style="display: none;"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="FormControlPOL">Стать</label>
+            <select class="form-control form-decoration form-decorationform-control-sm" id="FormControlPOL" size="1"
+                    name="gender">
+              <option value="0">Стать</option>
+              <option value="MALE">Чоловіча</option>
+              <option value="FEMALE">Жіноча</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="FormControlVIK">Номер телефону</label>
+            <input id="FormControlVIK" data-delay="300"
+                   class="form-control form-decoration form-decorationform-control-sm" type="text"
+                   placeholder="Вкажіть Ваш номер телефону з 380" name="phone" required="required" inputmode="text">
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="1" name="agree" id="Check1" checked="checked">
+            <label class="form-check-label" for="Check1">Я підтверджую свою згоду з
+              <a style="color:#0a8992;" href="#services">правилами даного
+                сайту</a> (включаючи згоду на отримання інформаційних повідомлень про програму)
+            </label>
+          </div>
+
+          <div class="btn-wrap">
+            <button type="submit" class="btn btn-xl btn-color me-4*" name="submit">
+              <b>Зареєструватися</b>
+            </button>
+            <p class="btn-wrap__text">або</p>
+            <a href="#" type="submit" class="btn btn-xl btn-color me-4*" data-bs-toggle="modal"
+               data-bs-target="#restoreModal"><b>Нагадати смс-код</b></a>
+            <input type="hidden" name="action" value="register">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="botInfo">
+  <div class="container">
+    <div class="row m-auto">
+      <div class="col-12 text-align-center">
+        <h2 class="subtitle subtitle--light">
+          Наявність лікарських засобів в аптеках Ви зможете перевірити за допомогою чат-бота після реєстрації.
+        </h2>
+        <div class="qr-wrap">
+          <img class="qrcode" src="assets/images/qrcode_roche_s.jpg" alt="qr code roche">
+        </div>
+        <div style="width: fit-content; margin: 0 auto">
+          <a class="telegram-link" href="http://t.me/pavailabilityBot">
+            <img class="telegram-icon" src="assets/icons/telegram.svg" alt="telegram">
+            Telegram Bot</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="mapa" class="locations">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="map-wrap">
+          <p class="subtitle">Аптеки у програмі</p>
+          <h2 class="colorTitle--secondary">Де саме можливо придбати</h2>
+          <div class="location__btns">
+            <a class="btn-color btn">Перелік аптек</a>
+            <button class="btn-color btn">Надіслати смс</button>
+          </div>
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="contacts" class="faq">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <p class="subtitle">Залишились питання</p>
+        <h2 class="colorTitle--secondary">Для зворотнього зв'язку</h2>
+        <div class="faq__wrap">
+          <div class="faq__item">
+            <p class="faq__item-text">Залишились питання ?</p>
+            <p class="faq__item-text">У випадку виникнення питань Ви можете звернутись на гарячу лінію за телефоном: <a
+                href="tel:+380800211103" class="faq__item-text">0-800-211-103</a>
+              Час роботи гарячої лінії з понеділка по пʼятницю, з 9.00 до 18.00 години.
+              Дзвінки безкоштовні з усіх мобільних та стаціонарних номерів України</p>
+          </div>
+          <div class="faq__item">
+            <p class="faq__item-text">«У разі виникнення побічних явищ під час лікування лікарським засобом ТОВ «Рош
+              Україна» або при наявності скарги на якість лікарського засобу звертайтеся за телефоном:
+              <a href="tel:+380800211103" class="faq__item-text">0-800-211-103</a> або на електронну адресу:
+              <a class="faq__item-text" href="mailto:">ukraine.safety@roche.com</a>»
+              Запит медичної інформації про лікарські засоби ТОВ «Рош Україна» ви можете надіслати на електронну адресу:
+              <a class="faq__item-text" href="mailto:ukraine.medinfo@roche.com"> ukraine.medinfo@roche.com</a>
+              «Інформація призначена для пацієнтів, яким лікар призначив лікарський засіб ТОВ «Рош Україна»
+              ТОВ «Рош Україна», 03150, м. Київ, вул. Велика Васильківська, 139, 5 поверх. Тел.:
+              <a href="tel:+380800501501" class="faq__item-text">0 800 501 501</a> (тільки в
+              межах України), <a href="tel:+380442988833" class="faq__item-text">+380 44 29 888 33</a>
+              <a class="faq__item-text" href="https://www.roche.ua/" target="_blank">roche.ua</a></p>
+          </div>
+          <div class="faq__item">
+            <p class="faq__item-text">Сайт адмініструється ТОВ «МЕДІКАРД» при інформаційній (фінансовій) підтримці ТОВ
+              «Рош Україна»</p>
+          </div>
+          <div class="faq__item">
+            <p class="faq__item-text">«У разі виникнення побічних явищ під час лікування лікарським засобом ТОВ «Рош
+              Україна» або при наявності скарги на якість лікарського засобу звертайтеся за телефоном: <a
+                  href="tel:+380800501501" class="faq__item-text">0 800 501 501</a> або
+              на електронну адресу: <a class="faq__item-text" href="mailto:">ukraine.safety@roche.com</a>»</p>
+          </div>
+          <div class="faq__item">
+            <p class="faq__item-text">Запит медичної інформації про лікарські засоби ТОВ «Рош Україна» ви можете
+              надіслати на електронну адресу:
+              <a class="faq__item-text" href="mailto:ukraine.medinfo@roche.com"> ukraine.medinfo@roche.com</a>
+            </p>
+          </div>
+          <div class="faq__item">
+            <p class="faq__item-text">
+              «Інформація призначена для пацієнтів, яким лікар призначив лікарський засіб ТОВ «Рош Україна»
+            </p>
+          </div>
+          <div class="faq__item">
+            <p class="faq__item-text">
+              ТОВ «Рош Україна». 03150, м. Київ, вул. Велика Васильківська, 139, 5 поверх. <br> Тел.:
+              <a href="tel:+380800211103" class="faq__item-text">0-800-211-103</a>
+              <a class="faq__item-text"
+                 href="https://www.roche.ua/"
+                 target="_blank">roche.ua</a>
+            </p>
+          </div>
+          <div class="faq__item">
+            <p class="faq__item-text">
+              <a class="faq__item-text" href="https://medicard.com.ua/medicard/page/privacy_policy//" target="_blank">Положення
+                про конфіденційність</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="footer__images">
+          <a href="#">
+            <img class="footer__image" src="assets/images/Roche_logo.svg" alt="roche">
+          </a>
+          <a href="#">
+            <img class="footer__image" src="assets/images/medicard_logo-removebg.png" alt="medicard">
+          </a>
+        </div>
+        <p class="footer__text">© 2022 Всі права захищені Medicard M-UA-00000758</p>
+        <p class="footer__text">Copyright © Website 2022</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<a class="scroll-to-top rounded" href="#page-top">
+  <svg class="svg-inline--fa fa-angle-up" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-up"
+       role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg="">
+    <path fill="currentColor"
+          d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"></path>
+  </svg>
+</a>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Нагадування картки</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Не заповнені поля</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Зрозуміло</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="restoreModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form name="restore" action="/api.psp.php" method="post">
+        <div class="modal-header">
+          <h5 class="modal-title">Нагадування</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="FormControlVIK">Вкажіть номер телефону</label>
+            <input id="FormControlVIK" class="form-control form-control-sm" type="text"
+                   placeholder="Вкажіть Ваш номер телефону з 380" name="phone" inputmode="text">
+          </div>
+          <div class="form-group">
+            <p align="center" style="margin: 1rem 0 0 0;">або</p>
+          </div>
+          <div class="form-group">
+            <label for="FormControlCARDCOD">Мій код який вказаний на картці</label>
+            <input id="FormControlCARDCOD" class="form-control form-control-sm" type="text"
+                   placeholder="Мій код який вказаний на картці" name="code" inputmode="text">
+          </div>
+          <!--<button type="submit" class="btn btn-xl btn-light me-4"><b>Нагадати номер картки</b></button>-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+          <button type="submit" class="btn btn-primary" name="submit">Нагадати номер картки</button>
+        </div>
+        <input type="hidden" name="action" value="restore">
+      </form>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="pharmaModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form name="pharma" action="/api.psp.php" method="post">
+        <div class="modal-header">
+          <h5 class="modal-title">Надіслати перелік аптек у смс</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="FormControlVIK2">Вкажіть номер телефону</label>
+            <input id="FormControlVIK2" class="form-control form-control-sm" type="text"
+                   placeholder="Вкажіть Ваш номер телефону з 380" name="phone" required="required" inputmode="text">
+          </div>
+          <div class="form-group">
+            <label>Оберіть населений пункт</label>
+            <select class="form-control form-control-sm" size="1" name="city">
+              <option value="12908,12224,12223">Вінницька область, Вінниця</option>
+              <option value="11264,8573,7075,1,14293">Дніпропетровська область, Дніпро</option>
+              <option value="7">Дніпропетровська область, Кривий Ріг</option>
+              <option value="10525,14440">Запорізька область, Запоріжжя</option>
+              <option value="8649,8508,1933,13247,6303,592,5305,8574,11,4889,3994">Київська область, Київ</option>
+              <option value="12220">Київська область, Кожанка</option>
+              <option value="11597,12222,8572,7844,12402">Львівська область, Львів</option>
+              <option value="7132,8">Миколаївська область, Миколаїв</option>
+              <option value="6745,1759,1758,1760,10748,9715,8571">Одеська область, Одеса</option>
+              <option value="2407">Полтавська область, Полтава</option>
+              <option value="72">Рівненська область, Рівне</option>
+              <option value="4151,7974">Сумська область, Суми</option>
+              <option value="14">Тернопільська область, Тернопіль</option>
+              <option value="11011,4002,8748,8570,10386,7973">Харківська область, Харків</option>
+              <option value="7133">Херсонська область, Херсон</option>
+              <option value="12221">Хмельницька область, Хмельницький</option>
+              <option value="1930,73">Черкаська область, Черкаси</option>
+              <option value="13107">Чернівецька область, Чернівці</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+          <button type="submit" class="btn btn-primary" name="submit">Надіслати</button>
+        </div>
+        <input type="hidden" name="action" value="pharma">
+      </form>
+    </div>
+  </div>
+</div>
+<script src="bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/map.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
