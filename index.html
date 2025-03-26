@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="styles/bootstrap-grid.min.css">
   <link rel="stylesheet" href="styles/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -271,6 +272,24 @@
       </div>
       <div class="col-12">
         <div class="accordion" id="menu">
+          <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" style="margin-top: 50px;">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Про препарати</h5>
+                  <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+                </div>
+                <div class="modal-body">
+                  <p>Я підтверджую, що лікар призначив мені препарат виробництва групи компаній Рош та продовжуючи подальше користування цим веб-сайтом, я погоджуюся як споживач отримувати інформацію про продукцію компанії ТОВ «Рош Україна» (включаючи інформацію про рецептурні лікарські засоби) засобами дистанційного звʼязку відповідно до статті 15 Закону України «Про захист прав споживачів». Покажіть перелік препаратів.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Так</button>
+                  <button type="button" class="btn btn-primary">Ні</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="blur"></div>
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -287,8 +306,6 @@
               </div>
             </div>
           </div>
-          <!-- item-3 -->
-          <!-- item-5 -->
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -305,7 +322,6 @@
               </div>
             </div>
           </div>
-          <!-- item-6 -->
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -325,7 +341,6 @@
               </div>
             </div>
           </div>
-          <!-- item-7 -->
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -342,7 +357,6 @@
               </div>
             </div>
           </div>
-          <!-- item-8 -->
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -359,7 +373,6 @@
               </div>
             </div>
           </div>
-          <!-- item-9 -->
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -376,7 +389,6 @@
               </div>
             </div>
           </div>
-          <!-- item-10 -->
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -394,7 +406,6 @@
               </div>
             </div>
           </div>
-
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -413,7 +424,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -424,86 +434,84 @@
     <div class="row">
       <div class="col-sm-12 col-lg-7 m-auto">
         <h2 class="colorTitle--secondary">Форма реєстрації учасника програми</h2>
-        <form name="register" action="/api.psp.php" method="post" class="register-form" style="margin: 0 auto;">
+        <form name="register"  action="/api.psp.php" method="post" class="register-form" style="margin: 0 auto;">
           <div class="form-group">
             <label for="FormControlCARDCOD">Мій код який вказаний на картці</label>
-            <input id="FormControlCARDCOD" class="form-control form-decoration form-decorationform-control-sm"
-                   type="text"
-                   placeholder="Мій код який вказаний на картці" name="code" required="required" inputmode="text">
+            <input id="FormControlCARDCOD" class="form-control form-control-sm" type="text" placeholder="Мій код який вказаний на картці" name="code" required="required">
           </div>
           <div class="form-group">
             <label for="FormControlPIB">Прізвище</label>
-            <input id="FormControlPIB" class="form-control form-decoration form-decorationform-control-sm" type="text"
-                   placeholder="Прізвище"
-                   name="middle_name" required="required"
-                   onkeyup="if (/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g.test(this.value)) this.value = this.value.replace(/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g,'')">
+            <input id="FormControlPIB" class="form-control form-control-sm" type="text" placeholder="Прізвище" name="middle_name" required="required" onkeyup="if (/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g.test(this.value)) this.value = this.value.replace(/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g,'')">
           </div>
           <div class="form-group">
             <label for="FormControlPIB">Ім'я</label>
-            <input id="FormControlPIB" class="form-control form-decoration form-decorationform-control-sm" type="text"
-                   placeholder="Ім'я"
-                   name="first_name" required="required"
-                   onkeyup="if (/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g.test(this.value)) this.value = this.value.replace(/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g,'')">
+            <input id="FormControlPIB" class="form-control form-control-sm" type="text" placeholder="Ім'я" name="first_name" required="required" onkeyup="if (/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g.test(this.value)) this.value = this.value.replace(/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g,'')">
           </div>
           <div class="form-group">
             <label for="FormControlPIB">Ім'я по батькові</label>
-            <input id="FormControlPIB" class="form-control form-decoration form-decorationform-control-sm" type="text"
-                   placeholder="Ім'я по батькові"
-                   name="last_name" required="required"
-                   onkeyup="if (/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g.test(this.value)) this.value = this.value.replace(/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g,'')">
+            <input id="FormControlPIB" class="form-control form-control-sm" type="text" placeholder="Ім'я по батькові" name="last_name" required="required" onkeyup="if (/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g.test(this.value)) this.value = this.value.replace(/([^+а-яА-ЯЁёІіЇїЄєґҐ'’ʼ\s-]+)/g,'')">
           </div>
           <div class="form-group">
             <label for="FormControlPREPARAT">Призначений лікарський засіб та дозування</label>
-            <input type="hidden" name="product" value="">
-            <select class="form-control form-decoration form-decorationform-control-sm" id="FormControlPREPARAT"
-                    size="1">
+            <input type="hidden" name="product" value=""/>
+            <select class="form-control form-control-sm" id="FormControlPREPARAT" size="1">
               <option value="default">Оберіть призначений лікарський засіб та дозування</option>
               <!-- <option value="АВАСТИН-АЛЕКЕНЗА-ТЕЦЕНТРИК">Авастин®, концентрат  для розчину для інфузій по 100 мг/4 мл  у флаконі № 1</option>
-               <option value="АВАСТИН-АЛЕКЕНЗА-ТЕЦЕНТРИК">Авастин®, концентрат  для розчину для  інфузій по 400 мг/16  мл у флаконі № 1</option>-->
-              <option value="АЛЕКЕНЗА">Алекенза®, капсули тверді по 150 мг, №224</option>
-              <option value="ГАЗІВА">Газіва®, концентрат для розчину для інфузій по 1000 мг/40 мл у флаконі №1</option>
+  <option value="АВАСТИН-АЛЕКЕНЗА-ТЕЦЕНТРИК">Авастин®, концентрат  для розчину для  інфузій по 400 мг/16  мл у флаконі № 1</option>-->
+              <option value="АЛЕКЕНЗА">Алекенза®, капсули  тверді по 150 мг, №224</option>
+              <option value="ГАЗІВА">Газіва®, концентрат  для розчину для інфузій по 1000 мг/40  мл у флаконі №1</option>
               <!--<option value="ГЕРЦЕПТИН-КАДСІЛА">Герцептин®, розчин  для iн’єкцій по 600  мг/5мл у флаконі</option>-->
-              <option value="ГЕРЦЕПТИН-КАДСІЛА">Кадсіла®, порошок для концентрату для розчину для інфузій по 100 мг у
-                флаконі №1
-              </option>
-              <option value="ГЕРЦЕПТИН-КАДСІЛА">Кадсіла®, порошок для концентрату для розчину для інфузій по 160 мг у
-                флаконі №1
-              </option>
+              <option value="ГЕРЦЕПТИН-КАДСІЛА">Кадсіла®, порошок  для концентрату для  розчину для інфузій  по 100 мг у флаконі №1</option>
+              <option value="ГЕРЦЕПТИН-КАДСІЛА">Кадсіла®, порошок  для концентрату для  розчину для інфузій по 160 мг у флаконі  №1</option>
               <!--<option value="МАБТЕРА">Мабтера®, розчин  для ін’єкцій 1400  мг/11,7 мл у флаконі  №1</option>-->
-              <option value="ОКРЕВУС">Окревус®, концентрат для розчину для інфузій 300мг/10мл, флакон №1</option>
-              <option value="ПЕР’ЄТА-ФЕСГО">Пер’єта®, концентрат для розчину для інфузій по 420 мг/ 14 мл у флаконі №1
-              </option>
-              <option value="ТЕЦЕНТРИК">Тецентрик®, концентрат для розчину для інфузій 1200мг/20мл, флакони №1</option>
-              <option value="ПОЛАЙВІ">Полайві, порошок для концентрату для розчину для інфузій по 140 мг, по 1 флакону
-              </option>
-              <option value="ПОЛАЙВІ">Полайві, порошок для концентрату для розчину для інфузій по 30 мг, по 1 флакону
-              </option>
-              <option value="ПЕР’ЄТА-ФЕСГО">Фесго, розчин для ін’єкцій, 600 мг/600 мг/20000 ОД, по 10 мл у флаконі №1
-              </option>
-              <option value="ПЕР’ЄТА-ФЕСГО">Фесго, розчин для ін'єкцій, 1200 мг/600 мг/30000 ОД по 15 мл розчину у
-                флаконі; по 1 флакону у картонній коробці
-              </option>
+              <option value="ОКРЕВУС">Окревус®, концентрат  для розчину для  інфузій 300мг/10мл,  флакон №1</option>
+              <option value="ПЕР’ЄТА-ФЕСГО">Пер’єта®, концентрат  для розчину для  інфузій по 420 мг/ 14  мл у флаконі №1</option>
+              <option value="ТЕЦЕНТРИК">Тецентрик®,  концентрат для  розчину для інфузій  1200мг/20мл,  флакони №1</option>
+              <option value="ПОЛАЙВІ">Полайві, порошок для концентрату для розчину для інфузій по 140 мг, по 1 флакону</option>
+              <option value="ПОЛАЙВІ">Полайві, порошок для концентрату для розчину для інфузій по 30 мг, по 1 флакону</option>
+              <option value="ПЕР’ЄТА-ФЕСГО">Фесго, розчин для ін’єкцій, 600 мг/600  мг/20000 ОД, по 10 мл  у флаконі №1</option>
+              <option value="ПЕР’ЄТА-ФЕСГО">Фесго, розчин для ін'єкцій, 1200 мг/600 мг/30000 ОД по 15 мл розчину  у флаконі; по 1 флакону у картонній  коробці</option>
             </select>
           </div>
           <div class="form-group">
             <label for="FormControlTESTER">Діагноз</label>
-            <select class="form-control form-decoration form-decorationform-control-sm" id="FormControlTESTER" size="1">
+            <select class="form-control form-control-sm" id="FormControlTESTER" size="1">
               <option value="0" class="default">Оберіть діагноз</option>
+              <option class="АВАСТИН-АЛЕКЕНЗА-ТЕЦЕНТРИК">Метастатичний колоректальний рак</option>
+              <option class="АВАСТИН-АЛЕКЕНЗА-ТЕЦЕНТРИК">Метастатичний рак молочної залози</option>
+              <option class="АВАСТИН-АЛЕКЕНЗА-ТЕЦЕНТРИК">Нерезектабельний розповсюджений/метастатичний/рецидивуючий недрібноклітинний рак легень</option>
+              <option class="АВАСТИН-АЛЕКЕНЗА-ТЕЦЕНТРИК">Розповсюджений нерезектабельний/метастатичний/рецидивуючий неплоскоклітинний недрібноклітинний рак легень з EGFR-активуючими мутаціями</option>
+              <option class="АВАСТИН-АЛЕКЕНЗА-ТЕЦЕНТРИК">Розповсюджений та/чи метастатичний нирково-клітинний рак</option>
+              <option class="АВАСТИН-АЛЕКЕНЗА-ТЕЦЕНТРИК">Розповсюджений епітеліальний рак яєчників, фаллопієвої труби і первинний рак очеревини</option>
+              <option class="АВАСТИН-АЛЕКЕНЗА-ТЕЦЕНТРИК">Персистуючий, рецидивуючий або метастатичний рак шийки матки</option>
+              <option class="АВАСТИН-АЛЕКЕНЗА-ТЕЦЕНТРИК">Рецидивуюча гіобластома</option>
+              <option class="АЛЕКЕНЗА">ALK-позитивний поширений недрібноклітинний рак легень (І лінія)</option>
+              <option class="АЛЕКЕНЗА">ALK-позитивний поширений недрібноклітинний рак легень (після лікування кризотинібом)</option>
+              <option class="ГАЗІВА">Хронічний лімфолейкоз (у комбінації із хлорамбуцилом)</option>
+              <option class="ГАЗІВА">Фолікулярна лімфома (у комбінації з хіміотерапією або бендамустином)</option>
+              <option class="ГЕРЦЕПТИН-КАДСІЛА">Метастатичний HER2-позитивний рак молочної залози</option>
+              <option class="ГЕРЦЕПТИН-КАДСІЛА">Ранній HER2-позитивний рак молочної залози</option>
+              <option class="МАБТЕРА">Неходжкінська лімфома (фолікулярна лімфома III - IV стадії, в комбінації з хіміотерапією / підтримувальна терапія / CD20-позитивна дифузна В-великоклітинна неходжкінська лімфома у комбінації з хіміотерапією)</option>
+              <option class="ОКРЕВУС">Розсіяний склероз (рецидивуюча форма або первинно прогресуюча форма)</option>
+              <option class="ПЕР’ЄТА-ФЕСГО">HER2-позитивний місцеворозповсюджений, запальний рак молочної залози</option>
+              <option class="ПЕР’ЄТА-ФЕСГО">HER2-позитивний ранній рак молочної залози</option>
+              <option class="ПЕР’ЄТА-ФЕСГО">HER2-позитивний метастатичний або місцеворецидивуючий нерезектабельний рак молочної залози</option>
+              <option class="ТЕЦЕНТРИК">Уротеліальна карцинома</option>
+              <option class="ТЕЦЕНТРИК">Недрібноклітинний рак легень (метастатичний/неплоскоклітинний)</option>
+              <option class="ТЕЦЕНТРИК">Дрібноклітинний рак легень</option>
+              <option class="ТЕЦЕНТРИК">Гепатоцелюлярна карцинома</option>
+              <option class="ПОЛАЙВІ">Дифузна B-великоклітинна лімфома</option>
+              <option class="АВАСТИН-АЛЕКЕНЗА-ТЕЦЕНТРИК АЛЕКЕНЗА ГАЗІВА ГЕРЦЕПТИН-КАДСІЛА МАБТЕРА ОКРЕВУС ПЕР’ЄТА-ФЕСГО ТЕЦЕНТРИК ПОЛАЙВІ">Інше</option>
             </select>
-            <textarea name="diagnosis"
-                      placeholder="Будь ласка, вкажіть точний діагноз, як зазначено у виписаному вам рецепті. У випадку внесення неточного діагнозу, ми можемо зателефонувати вам для встановлення деталей."
-                      class="form-control form-decoration form-decorationform-control-sm"
-                      style="display: none;"></textarea>
+            <textarea name="diagnosis" placeholder="Будь ласка, вкажіть точний діагноз, як зазначено у виписаному вам рецепті. У випадку внесення неточного діагнозу, ми можемо зателефонувати вам для встановлення деталей." class="form-control form-control-sm" style="display: none;"></textarea>
           </div>
           <div class="form-group">
             <label for="FormControlEDGE">Мій вік</label>
-            <input id="FormControlEDGE" class="form-control form-decoration form-decorationform-control-sm" type="text"
-                   placeholder="Вкажіть Вашу дату народження" name="dob" required="required" inputmode="text">
+            <input id="FormControlEDGE" class="form-control form-control-sm" type="text" placeholder="Вкажіть Вашу дату народження" name="dob" required="required">
           </div>
           <div class="form-group">
             <label for="FormControlGEODATA_REGION">Оберіть область</label>
-            <select class="form-control form-decoration form-decorationform-control-sm" id="FormControlGEODATA_REGION"
-                    size="1">
+            <select class="form-control form-control-sm" id="FormControlGEODATA_REGION" size="1">
               <option value="default">Оберіть область</option>
               <option value="a87ff679a2f3e71d9181a67b7542122c">Вінницька область</option>
               <option value="da4fb5c6e93e74d3df8527599fa62642">Волинська область</option>
@@ -534,18 +542,991 @@
           </div>
           <div class="form-group">
             <label for="FormControlGEODATA">Оберіть свій населений пункт</label>
-            <select name="city" class="form-control form-decoration form-decorationform-control-sm"
-                    id="FormControlGEODATA" size="1">
-              <option value="0" class="default">Оберіть населений пункт</option>
+            <select name="city" class="form-control form-control-sm" id="FormControlGEODATA" size="1">
+              <option value="0" class="default">Оберіть  населений пункт</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="847">Білки</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="966">Баланівка</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="885">Бедевля</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="188">Берегове</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="775">Берегово</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="691">Буштино</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="918">Жашків</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="776">Рясне</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="795">Авангард</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="65">Александровка</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="86">Алчевськ</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="755">Ананьїв</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="536">Андріївка</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="752">Андрушівка</option>
+              <option class="ed3d2c21991e3bef5e069713af9fa6ca" value="497">Антонівка</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="840">Антоніни</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="702">Апостолове</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="557">Арбузинка</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="511">Арциз</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="1012">Аули</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="860">Білики</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="741">Білогір'я</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="898">Білозір'я</option>
+              <option class="c20ad4d76fe97759aa27a0c99bff6710" value="925">Балабине</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="825">Банилів</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="477">Бар</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="311">Баранівка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="526">Баришівка</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="999">Батурин</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="394">Берегомет</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="251">Бережани</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="818">Березна</option>
+              <option class="7647966b7343c29048673252e490f736" value="312">Березне</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="1047">Берестечко</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="908">Благовіщенське</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="315">Благодатне (Жовтневе)</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="485">Бобринець</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="878">Бобровиця</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="965">Богданівка</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="114">Богородчани</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="757">Болехів</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="715">Борзна</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="197">Борислав</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="703">Борщагівка </option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="516">Бочечки</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="815">Бояни</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="1043">Брацлав</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="814">Варва</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="498">Ватутіне</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="742">Вашківці</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="895">Великі Комяти</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="830">Великі Лази</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="1055">Великі Лучки</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="1030">Великі Сорочинці</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="404">Велика Багачка</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="1056">Велика Бийгань</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="747">Велика Добронь</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="713">Великий Березний</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="717">Великий Бичків</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="1053">Великий Раковець</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="1041">Велятино</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="774">Вилок</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="778">Вилок</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="189">Виноградів</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="735">Вишково</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="221">Воловець</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="340">Волочиськ</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="964">Гайворон</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="926">Голованівськ</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="960">Гончарівське</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="658">Городня</option>
+              <option class="65ded5353c5ee48d0b7d48c591b8f430" value="304">Украина</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="634">Ічня</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="164">Алупка</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="85">Антрацит</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="785">Бібрка</option>
+              <option class="ed3d2c21991e3bef5e069713af9fa6ca" value="952">Білозерка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="537">Бабаї</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="973">Багате</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="445">Балта</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="782">Бахмач</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="628">Баштанка</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="232">Бердичів</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="976">Березанка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="527">Березань</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="745">Березнегувате</option>
+              <option class="ed3d2c21991e3bef5e069713af9fa6ca" value="382">Берислав</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="370">Бершадь</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="190">Боголюби</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="481">Борщів</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="935">Браїлів</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="1019">Братське</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="218">Броди</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="804">Брошнів-Осада</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="613">Буринь</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="215">Бурштин</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="813">Вільшанка</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="474">Віньківці</option>
+              <option class="7647966b7343c29048673252e490f736" value="455">Вараш</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="261">Васильківка</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="588">Великі Кринки</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="854">Великий Кучурів</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="953">Верхівцеве</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="256">Верхньодніпровськ</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="609">Вижниця</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="829">Власівка</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="509">Городище</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="962">Дмитрівка</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="489">Добровеличківка</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="1020">Єланець</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="66">Алушта</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="591">Білопілля</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="278">Балаклія</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="599">Березівка</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="1011">Бессарабське</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="916">Бишів</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="1035">Благодатне</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="472">Богуслав</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="532">Брусилів</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="308">Брюховичі</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="227">Брянка</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="360">Бучач</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="380">Вільногірськ</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="731">Вапнярка</option>
+              <option class="ed3d2c21991e3bef5e069713af9fa6ca" value="954">Велика Олександрівка</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="819">Велика Писарівка</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="849">Великий Омеляник</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="1048">Велимче</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="653">Верховина</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="921">Веселинове</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="851">Вигода</option>
+              <option class="ed3d2c21991e3bef5e069713af9fa6ca" value="956">Високопілля</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="789">Вовчинець</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="342">Вознесенськ</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="296">Володимир-Волинський</option>
+              <option class="7647966b7343c29048673252e490f736" value="319">Володимирець</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="1017">Вороніж</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="763">Ворохта</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="924">Врадіївка</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="405">Гадяч</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="816">Герца</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="418">Глибока</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="936">Городниця</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="643">Городок</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="875">Гриців</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="859">Десна</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="636">Долинська</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="633">Драбів</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="979">Журавка</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="644">Козелець</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="780">Короп</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="781">Короп</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="1065">Іспас</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="176">Армянск</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="576">Біловодськ</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="969">Бірки</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="466">Барвінкове</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="941">Безлюдівка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="1068">Берестин</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="551">Болград</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="75">Бориспіль</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="373">Буськ</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="933">Війтівка</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="977">Вінницькі Хутори </option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="16">Вінниця</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="1027">Велика Березовиця</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="356">Великие Гаи</option>
+              <option class="7647966b7343c29048673252e490f736" value="616">Висоцьк</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="709">Вишнівець</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="833">Войнилів</option>
+              <option class="c20ad4d76fe97759aa27a0c99bff6710" value="1039">Володимирівське</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="968">Вороновиця</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="496">Галицинове</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="277">Галич</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="1000">Гвіздець</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="407">Глобине</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="345">Глухів</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="211">Горохів</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="363">Горького</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="987">Грушівка</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="955">Губиниха</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="687">Деражня</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="322">Довбиш</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="850">Довжок</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="904">Доманівка</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="959">Дружба</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="263">Дунаївці</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="605">Завалля</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="641">Заставна</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="399">Звенигородка</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="645">Корюківка</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="981">Куликівка</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="518">Ємільчине</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="569">Іваничі</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="563">Ізяслав</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="158">Аромат</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="208">Білгород-Дністровський</option>
+              <option class="d3d9446802a44259755d38e6d163e820" value="958">Білозерське</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="580">Білокуракине</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="538">Близнюки</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="704">Борова</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="352">Бородянка</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="760">Великий Любінь</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="442">Верхнє Синьовидне</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="224">Гайсин</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="1066">Голинь</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="69">Горішні Плавні</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="301">Городенка</option>
+              <option class="7647966b7343c29048673252e490f736" value="651">Гоща</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="839">Гримайлів</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="420">Гусятин</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="2">Дніпро</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="1038">Дослідне</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="515">Дубов'язівка</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="264">Жовтневое</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="807">Журавка</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="767">Забороль</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="1046">Зміїнець</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="294">Знам'янка</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="887">Знам'янка Друга</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="270">Золотоноша</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="1025">Казанка</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="624">Кельменці</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="761">Клішківці</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="963">Криве Озеро</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="806">Ладан</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="512">Мена</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="978">Михайло-Коцюбинське</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="174">Аэрофлотский</option>
+              <option class="d3d9446802a44259755d38e6d163e820" value="1010">Білицьке</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="242">Біляївка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="347">Богодухів</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="248">Боярка</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="826">Великі Мости</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="238">Винники</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="627">Гнівань</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="649">Гребінка</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="555">Делятин</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="932">Джулинка</option>
+              <option class="7647966b7343c29048673252e490f736" value="212">Дубно</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="91">Житомир</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="381">Жовті Води</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="510">Заводське</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="417">Кіцмань</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="207">Кам'янець-Подільський</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="484">Кам'янка</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="517">Камінь-Каширський</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="791">Колінківці</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="762">Компаніївка</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="305">Конотоп</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="78">Красний Луч</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="137">Кропивницький</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="985">Мішково-Погорілове</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="21">Миколаїв</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="671">Новгород-Сіверський</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="519">Іршанськ</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="62">Балаклава</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="539">Борова</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="74">Бровари</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="241">Велика Михайлівка</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="842">Вилкове</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="223">Городок</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="676">Градизьк</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="732">Громада</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="1002">Дашківці</option>
+              <option class="7647966b7343c29048673252e490f736" value="889">Демидівка</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="710">Диканька</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="108">Долина</option>
+              <option class="7647966b7343c29048673252e490f736" value="461">Дубровиця</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="302">Жмеринка</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="465">Заводське</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="456">Заліщики</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="905">Звягель (Новоград-Волинський)</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="449">Зеленодольськ</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="821">Золотий Потік</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="523">Канів</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="688">Катеринопіль</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="210">Ковель</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="845">Колки</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="266">Красилів</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="83">Краснодон/Сорокине</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="744">Краснопілля</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="589">Кролевець</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="801">Куликів</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="915">Лужани</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="486">Мала Виска</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="1032">Малинці</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="907">Мамаївці</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="1069">Мамалига</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="855">Недобоївці</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="410">Нова Одеса</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="929">Новгородка</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="980">Нове</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="927">Новий Буг</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="812">Новоархангельськ</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="1071">Нововолинськ</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="565">Новодністровськ</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="421">Носівка</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="726">Очаків</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="712">Снігурівка</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="101">Івано-Франківськ</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="957">Іларіонове</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="629">Іллінці</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="450">Інгулець</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="60">Бахчисарай</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="435">Буди</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="148">Буча</option>
+              <option class="c20ad4d76fe97759aa27a0c99bff6710" value="94">Вільнянськ</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="597">Великий Дальник</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="863">Давидів</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="289">Добромиль</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="673">Добротвір</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="427">Зіньків</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="695">Заболотів</option>
+              <option class="7647966b7343c29048673252e490f736" value="618">Зарічне</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="252">Збараж</option>
+              <option class="7647966b7343c29048673252e490f736" value="769">Зоря</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="348">Ківерці</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="1007">Корнин</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="233">Коростень</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="574">Корсунь-Шевченківський</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="577">Кремінна</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="492">Лебедин</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="535">Летичів</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="306">Ніжин</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="1014">Нова Прага</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="487">Новомиргород</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="642">Новоселиця</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="872">Онуфріївка</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="441">Первомайськ</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="1036">Путила</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="862">Рідківці</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="1028">Романківці</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="827">Рудно</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="76">Біла Церква</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="119">Білогірськ</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="139">Валки</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="335">Великодолинське</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="928">Городнє</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="693">Грушово</option>
+              <option class="c20ad4d76fe97759aa27a0c99bff6710" value="387">Гуляйполе</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="124">Дрогобич</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="723">Дубляни</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="608">Зборів</option>
+              <option class="7647966b7343c29048673252e490f736" value="245">Здолбунів</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="198">Калинівка</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="109">Калуш</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="51">Кам'янське</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="406">Карлівка</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="344">Коростишів</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="144">Кріпенський</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="316">Липини</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="590">Липова Долина</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="721">Лисянка</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="838">Локачі</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="800">Маньківка</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="623">Монастирище</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="865">Мошни</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="938">Недригайлів</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="201">Нетішин</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="919">Низи</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="488">Новоукраїнка</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="677">Остер</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="300">Південноукраїнськ</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="564">Сокиряни</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="877">Тарасівці</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="611">Білогородка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="346">Васищеве</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="173">Гаспра</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="604">Дачне</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="626">Довге</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="896">Драгово</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="1057">Дубриничі</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="216">Жидачів</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="891">Жовтанці</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="1061">Журавне</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="228">Кіровськ/Голубівка</option>
+              <option class="7647966b7343c29048673252e490f736" value="740">Квасилів</option>
+              <option class="7647966b7343c29048673252e490f736" value="396">Клевань</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="365">Кобеляки</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="730">Козельщина</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="253">Козова</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="478">Козятин</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="110">Коломия</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="869">Космач</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="20">Кривий Ріг</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="121">Луцьк</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="520">Любар</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="811">Нова Ушиця</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="787">Олександрівка</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="194">Олександрія</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="293">Охтирка</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="393">Прилуки</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="267">Сміла</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="416">Сторожинець</option>
+              <option class="ed3d2c21991e3bef5e069713af9fa6ca" value="99">Херсон</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="733">Хотин</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="1044">Іза</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="982">Вільшани</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="343">Васильків</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="967">Велика Димерка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="1059">Велика Олександрівка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="467">Великий Бурлук</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="168">Гвардейское</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="689">Доброслав</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="694">Дубове</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="106">Жовква</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="596">Захарівка</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="682">Зимна Вода</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="1062">Зубра</option>
+              <option class="7647966b7343c29048673252e490f736" value="822">Клесів</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="799">Копичинці</option>
+              <option class="7647966b7343c29048673252e490f736" value="783">Корець</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="111">Косів</option>
+              <option class="7647966b7343c29048673252e490f736" value="367">Костопіль</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="401">Котельва</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="362">Кременець</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="368">Крижопіль</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="464">Кринички</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="852">Крихівці</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="728">Кути</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="652">Ланівці</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="81">Лисичанськ</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="1009">Лугини</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="1004">Луків</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="567">Любомль</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="366">Малин</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="1051">Миропіль</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="881">Павлиш</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="986">Петрове</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="949">Побузьке</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="585">Полонне</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="680">Помічна</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="922">Понінка</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="337">Путивль</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="984">Рівне</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="910">Ріпки</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="820">Семенівка</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="719">Сновськ</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="879">Соколівське</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="678">Сосниця</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="339">Тальне</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="104">Чернівці</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="773">Івано-Франкове</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="846">Ільниця</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="219">Іршава</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="105">Вишгород</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="183">Грэсовский</option>
+              <option class="c20ad4d76fe97759aa27a0c99bff6710" value="25">Запоріжжя</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="231">Золочів</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="600">Зоря</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="945">Керецьки</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="1042">Копашнево</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="777">Королево</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="68">Кременчук</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="886">Кушниця</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="196">Ладижин</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="707">Ланчин</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="272">Лисець</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="26">Луганськ</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="848">Лука-Мелешківська</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="571">Любешів</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="324">Магдалинівка</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="1006">Микитинці</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="1052">Микулинці</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="870">Микуличин</option>
+              <option class="7647966b7343c29048673252e490f736" value="617">Миляч</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="480">Монастириська</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="500">Нова Борова</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="147">Ромни</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="265">Ружичанка</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="359">Світловодськ</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="892">Суботці</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="690">Талалаївка</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="268">Умань</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="1064">Чудей</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="244">Іванівка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="438">Високий</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="817">Вишеньки</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="353">Вишневе</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="165">Гурзуф</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="809">Затока</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="217">Кам'янка-Бузька</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="823">Кожичі</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="371">Липовець</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="425">Лохвиця</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="206">Лутугине</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="614">Міжгір'я</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="318">Маневичі</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="151">Марганець</option>
+              <option class="7647966b7343c29048673252e490f736" value="462">Млинів</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="112">Надвірна</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="1022">Новиця</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="234">Новоград-Волинський</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="871">Обертин</option>
+              <option class="7647966b7343c29048673252e490f736" value="950">Олександрія</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="764">Отинія</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="554">Підволочиськ</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="803">Підгайці</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="1005">Поляниця</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="674">Почаїв</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="1016">Свеса</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="743">Середина-Буда</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="309">Славута</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="637">Смоліне</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="93">Суми</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="664">Христинівка</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="118">Чернігів</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="155">Ізмаїл</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="413">Вовчанськ</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="473">Володарка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="684">Ворзель</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="143">Джанкой</option>
+              <option class="d3d9446802a44259755d38e6d163e820" value="145">Добропілля</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="357">Зміїв</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="940">Калчева</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="970">Кодима</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="725">Комарно</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="1037">Куликів</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="656">Літин</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="376">Лубни</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="19">Львів</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="581">Марківка</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="361">Межова</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="138">Мукачево</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="1049">Народичі</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="692">Нересниця</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="831">Нижне Солотвино</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="295">Нововолинськ</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="522">Новогуйвинське</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="779">Олика</option>
+              <option class="7647966b7343c29048673252e490f736" value="424">Острог</option>
+              <option class="7647966b7343c29048673252e490f736" value="798">Острожець</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="946">Пістинь</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="553">Перегінське</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="1023">Пороги</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="1054">Скала-Подільська</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="419">Скалат</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="802">Стара Синява</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="705">Торговиця</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="451">Тростянець</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="269">Червона Слобода</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="55">Євпаторія</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="333">Віта-Поштова</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="902">Вороньків</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="770">Дворічна</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="247">Дергачі</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="943">Докучаєвське</option>
+              <option class="c20ad4d76fe97759aa27a0c99bff6710" value="493">Комишуваха</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="482">Машівка</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="377">Миколаїв</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="284">Могилів-Подільський</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="205">Молодогвардійськ</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="903">Муровані Курилівці</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="561">Овруч</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="1003">Павлівка</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="568">Перечин</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="794">Поляна</option>
+              <option class="7647966b7343c29048673252e490f736" value="310">Радивилів</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="320">Ратне</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="331">Рогатин</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="53">Самар (Новомосковськ)</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="200">Старокостянтинів</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="897">Теофіполь</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="203">Теребовля</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="835">Товсте</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="116">Черкаси</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="213">Шостка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="279">Ізюм</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="499">Гатне</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="1001">Гнідин</option>
+              <option class="d3d9446802a44259755d38e6d163e820" value="48">Дружківка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="729">Зачепилівка</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="169">Зуя</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="374">Котовськ</option>
+              <option class="c20ad4d76fe97759aa27a0c99bff6710" value="631">Кушугум</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="579">Мілове</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="67">Миргород</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="338">Моршин</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="152">Нікополь</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="285">Немирів</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="655">Озерне</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="913">Ракошино</option>
+              <option class="7647966b7343c29048673252e490f736" value="619">Рафалівка</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="276">Рахів</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="317">Рожище</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="834">Рожнів</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="434">Рожнятів</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="27">Тернопіль</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="29">Хмельницький</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="494">Чигирин</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="73">Глеваха</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="937">Гоголів</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="901">Гора</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="468">Золочів</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="63">Керч</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="479">Красносельська рада</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="909">Крижанівка</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="930">Кубей</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="853">Меденичі</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="222">Мостиська</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="402">Нові Санжари</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="790">Нова Прилука</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="583">Новоайдар</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="947">Оброшине</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="341">Обухівка</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="560">Олевськ</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="323">Першотравенськ</option>
+              <option class="7647966b7343c29048673252e490f736" value="639">Рокитне</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="772">Сільце</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="220">Свалява</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="113">Снятин</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="706">Солотвин</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="615">Стара Вижівка</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="914">Сторожница</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="876">Хоростків</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="199">Чемерівці</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="549">Чорнобай</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="193">Чортків</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="556">Гореничі</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="439">Катеринівка</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="159">Кировское</option>
+              <option class="d3d9446802a44259755d38e6d163e820" value="34">Костянтинівка</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="602">Кучурган</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="1026">Наварія</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="209">Новий Розділ</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="1073">Новий Яричів</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="548">Новопсков</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="1029">Ободівка</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="592">Опішня</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="793">Оратів</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="766">П'ятихатки</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="52">Павлоград</option>
+              <option class="7647966b7343c29048673252e490f736" value="92">Рівне</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="739">Сокирниця</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="754">Солочин</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="378">Старий Косів</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="724">Тарасове</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="856">Татарів</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="313">Шепетівка</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="495">Шпола</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="625">Шумське</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="379">Гостомель</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="483">Кілія</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="542">Кегичівка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="991">Ков'яги</option>
+              <option class="d3d9446802a44259755d38e6d163e820" value="31">Краматорськ</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="160">Красногвардейское</option>
+              <option class="c20ad4d76fe97759aa27a0c99bff6710" value="894">Нове Запоріжжя</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="249">Новосвітлівка</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="287">Новояворівськ</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="458">Оржиця</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="433">Первомайське</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="1013">Перещепине</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="792">Печора</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="586">Попільня</option>
+              <option class="7647966b7343c29048673252e490f736" value="202">Сарни</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="751">Середнє</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="948">Синевир</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="214">Солотвино</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="397">Тисмениця</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="683">Торчин</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="423">Ярмолинці</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="534">Гребінки</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="738">Згурівка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="632">Козача Лопань</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="161">Красноперекопск</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="874">Ліски</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="665">Лиманське</option>
+              <option class="c20ad4d76fe97759aa27a0c99bff6710" value="336">Оріхів</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="1060">Пасіки-Зубрицькі</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="82">Первомайськ</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="239">Перемишляни</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="722">Петрівка-Роменська</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="408">Пирятин</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="621">Погребище</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="698">Пулини</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="476">Радомишль</option>
+              <option class="7647966b7343c29048673252e490f736" value="321">Соснове</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="716">Тересва</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="566">Тлумач</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="622">Турійськ</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="890">Угорники</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="1031">Угринів</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="836">Цумань</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="1070">Чернівці</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="258">Шахтарське (Першотравенськ)</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="990">Денихівка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="657">Димер</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="917">Дмитрівка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="543">Коломак</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="996">Кочеток</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="178">Ленино</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="666">Любашівка</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="369">Піщанка</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="192">Перевальськ</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="226">Петриківка</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="15">Полтава</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="330">Пустомити</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="531">Романів</option>
+              <option class="7647966b7343c29048673252e490f736" value="714">Смига</option>
+              <option class="7647966b7343c29048673252e490f736" value="1063">Старе Село</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="187">Тячів</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="911">Чукалівка</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="797">Шацьк</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="530">Дружня</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="415">Красноград</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="61">Ливадия</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="659">Лиманка</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="884">Підбуж</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="259">Петропавлівка</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="582">Попасна</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="303">Рава-Руська</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="422">Решетилівка</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="899">Розсошенці</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="786">Ромодан</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="759">Рудки</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="559">Ружин</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="828">Станіславчик</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="1045">Стрижавка</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="135">Ужгород</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="900">Яблунів </option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="529">Іванків</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="544">Краснокутськ</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="601">Маяки</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="756">Миколаївка</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="171">Нижнегорский</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="153">Покров</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="140">Радехів</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="80">Ровеньки</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="749">Словечне</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="282">Станишівка</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="630">Теплик</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="186">Хуст</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="392">Яремче</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="149">Ірпінь</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="436">Краснопавлівка</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="170">Никита</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="262">Покровське</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="97">Рубіжне</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="204">Самбір</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="587">Сенча</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="972">Супрунівка</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="372">Тиврів</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="521">Хорошів</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="734">Чинадійово</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="1024">Яблуниця</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="236">Кагарлик</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="126">Куп'янськ</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="391">Нерубайське</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="64">Николаевка</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="225">Підгородне</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="490">Сватове</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="383">Сколе</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="686">Славське</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="784">Томашпіль</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="409">Хорол</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="1050">Червоне</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="454">Черняхів</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="638">Чоп</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="573">Калинівка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="280">Куп'янськ-Вузловий</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="123">Овідіополь</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="167">Октябрьское</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="257">Роздори</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="87">Свердловськ/Довжанськ</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="288">Сокаль</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="864">Солонка</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="758">Стрілки</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="746">Тростянець</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="697">Чорнухи</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="513">Чуднів</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="906">Яноші</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="736">Ясіня</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="283">Ківшарівка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="524">Калита</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="699">Капітанівка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="866">Катюжанка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="974">Кашперівка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="944">Липці</option>
+              <option class="d3d9446802a44259755d38e6d163e820" value="650">Миколаївка</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="750">Нижня Апша</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="17">Одеса</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="748">Окни</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="162">Первомайское</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="150">Синельникове</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="888">Слобожанське</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="229">Слов'яносербськ</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="102">Сокільники</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="230">Тульчин</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="708">Чоповичі</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="403">Чутове</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="24">Київ</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="128">Лозова</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="508">Первомайськ</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="172">Плодовое</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="291">Солоне</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="141">Соснівка</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="250">Станиця Луганська</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="718">Турбів</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="428">Шишаки</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="1033">Ярунь</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="808">Клавдієво-Тарасове</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="880">Кожанка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="411">Коцюбинське</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="469">Люботин</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="975">Мала Данилівка</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="603">Перехрестове</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="796">Прилиманське</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="184">Приморский</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="575">Софіївка</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="355">Старий Самбір</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="578">Старобільськ</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="771">Терново</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="191">Хмільник</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="858">Красилівка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="667">Крюківщина</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="700">Лютіж</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="547">Малинівка</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="550">Подільськ</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="163">Раздольное</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="84">Стаханов/Кадіївка</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="354">Стебник</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="325">Таромське</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="832">Чернівці</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="923">Чечельник</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="334">Макарів</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="246">Мерефа</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="998">Мила</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="429">Миронівка</option>
+              <option class="d3d9446802a44259755d38e6d163e820" value="662">Новодонецьке</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="235">Рені</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="59">Саки</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="125">Стрий</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="146">Тернівка</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="281">Шаргород</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="654">Немішаєве</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="861">Нові Петрівці</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="127">Нова Водолага</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="1015">Новосілки</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="475">Роздільна</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="54">Севастополь</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="432">Судова Вишня</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="768">Східниця</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="290">Томаківка</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="584">Троїцьке</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="570">Ямпіль</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="307">Обухів</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="647">П'ятихатки</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="912">Переяслав</option>
+              <option class="d3d9446802a44259755d38e6d163e820" value="810">Сіверськ</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="594">Саврань</option>
+              <option class="d3d9446802a44259755d38e6d163e820" value="931">Святогірськ</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="181">Симеиз</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="185">Трускавець</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="598">Царичанка</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="672">Щастя</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="988">Південне</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="545">Панютине</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="275">Переяслав-Хмельницький</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="358">Сарата</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="129">Турка</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="460">Широке</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="274">Ювілейне</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="398">Первомайський</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="983">Пересічне</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="351">Петропавлівська Борщагівка</option>
+              <option class="d3d9446802a44259755d38e6d163e820" value="607">Слов'яногірськ</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="175">Советский</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="753">Тарутине</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="681">Татарбунари</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="824">Хирів</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="395">Ходорів</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="1008">Юр’ївка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="640">Печеніги</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="572">Плесецьке</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="701">Плюти</option>
+              <option class="d3d9446802a44259755d38e6d163e820" value="35">Слов'янськ</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="179">Старый Крым</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="663">Таїрове</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="136">Червоноград</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="857">Погреби</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="546">Покотилівка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="620">Проліски</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="22">Сімферополь</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="177">Строгановка</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="893">Теплодар</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="332">Щирець</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="989">П'ятигори</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="525">Пісківка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="72">Пісочин</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="182">Судак</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="595">Усатове</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="873">Утконосівка</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="107">Яворів</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="533">Ржищів</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="635">Руська Лозова</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="57">Учкуевка</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="868">Фонтанка</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="1034">Хлібодарське</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="971">Цебрикове</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="457">Чорноморськ</option>
+              <option class="d3d9446802a44259755d38e6d163e820" value="951">Олексієво-Дружківка</option>
+              <option class="d3d9446802a44259755d38e6d163e820" value="961">Олександрівка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="452">Рокитне</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="541">Савинці</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="58">Феодосия</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="765">Шабо</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="939">Шевченкове</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="552">Ширяєве</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="470">Сахновщина</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="528">Сквира</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="994">Слатине</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="737">Ставище</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="180">Форос</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="156">Южне</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="696">Святопетрівське</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="443">Славутич</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="414">Слобожанське</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="166">Черноморское</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="298">Софіївська Борщагівка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="867">Старі Петрівці</option>
+              <option class="45c48cce2e2d7fbdea1afc51c7c6ad26" value="56">Ялта</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="471">Солоницівка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="299">Стоянка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="934">Старий Салтів</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="71">Стрелечья</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="992">Таранівка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="412">Тарасівка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="1018">Требухів</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="364">Тараща</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="18">Харків</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="942">Циркуни</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="375">Донець</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="447">Тетіїв</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="997">Черкаська Лозова</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="453">Узин</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="685">Чкаловське</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="314">Українка</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="273">Чугуїв</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="286">Фастів</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="1067">Фурси</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="540">Шевченкове</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="995">Шелестове</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="514">Ходосівка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="788">Хотів</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="1040">Хотянівка</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="727">Чабани</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="297">Чайки</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="837">Чубинське</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="612">Шевченкове</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="805">Щасливе</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="444">Яготин</option>
+              <option class="a87ff679a2f3e71d9181a67b7542122c" value="0">Інше</option>
+              <option class="da4fb5c6e93e74d3df8527599fa62642" value="0">Інше</option>
+              <option class="c4ca4238a0b923820dcc509a6f75849b" value="0">Інше</option>
+              <option class="d3d9446802a44259755d38e6d163e820" value="0">Інше</option>
+              <option class="2a38a4a9316c49e5a833517c45d31070" value="0">Інше</option>
+              <option class="9b8619251a19057cff70779273e95aa6" value="0">Інше</option>
+              <option class="c20ad4d76fe97759aa27a0c99bff6710" value="0">Інше</option>
+              <option class="f899139df5e1059396431415e770c6dd" value="0">Інше</option>
+              <option class="6512bd43d9caa6e02c990b0a82652dca" value="0">Інше</option>
+              <option class="1afa34a7f984eeabdbb0a7d494132ee5" value="0">Інше</option>
+              <option class="c51ce410c124a10e0db5e4b97fc2af39" value="0">Інше</option>
+              <option class="8f14e45fceea167a5a36dedd4bea2543" value="0">Інше</option>
+              <option class="c9f0f895fb98ab9159f51fd0297e236d" value="0">Інше</option>
+              <option class="e4da3b7fbbce2345d7772b0674a318d5" value="0">Інше</option>
+              <option class="eccbc87e4b5ce2fe28308fd9f2a7baf3" value="0">Інше</option>
+              <option class="7647966b7343c29048673252e490f736" value="0">Інше</option>
+              <option class="8613985ec49eb8f757ae6439e879bb2a" value="0">Інше</option>
+              <option class="aab3238922bcc25a6f606eb525ffdc56" value="0">Інше</option>
+              <option class="1679091c5a880faf6fb5e6087eb1b2dc" value="0">Інше</option>
+              <option class="ed3d2c21991e3bef5e069713af9fa6ca" value="0">Інше</option>
+              <option class="33e75ff09dd601bbe69f351039152189" value="0">Інше</option>
+              <option class="eb160de1de89d9058fcb0b968dbbbd68" value="0">Інше</option>
+              <option class="6974ce5ac660610b44d9b9fed0ff9548" value="0">Інше</option>
+              <option class="2b44928ae11fb9384c4cf38708677c48" value="0">Інше</option>
             </select>
-            <textarea name="city_text" placeholder="Вкажіть свій населений пункт"
-                      class="form-control form-decoration form-decorationform-control-sm"
-                      style="display: none;"></textarea>
+            <textarea name="city_text" placeholder="Вкажіть свій населений пункт" class="form-control form-control-sm" style="display: none;"></textarea>
           </div>
           <div class="form-group">
             <label for="FormControlPOL">Стать</label>
-            <select class="form-control form-decoration form-decorationform-control-sm" id="FormControlPOL" size="1"
-                    name="gender">
+            <select class="form-control form-control-sm" id="FormControlPOL" size="1" name="gender">
               <option value="0">Стать</option>
               <option value="MALE">Чоловіча</option>
               <option value="FEMALE">Жіноча</option>
@@ -553,9 +1534,7 @@
           </div>
           <div class="form-group">
             <label for="FormControlVIK">Номер телефону</label>
-            <input id="FormControlVIK" data-delay="300"
-                   class="form-control form-decoration form-decorationform-control-sm" type="text"
-                   placeholder="Вкажіть Ваш номер телефону з 380" name="phone" required="required" inputmode="text">
+            <input id="FormControlVIK" data-delay="300" class="form-control form-control-sm" type="text" placeholder="Вкажіть Ваш номер телефону з 380" name="phone" required="required">
           </div>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="1" name="agree" id="Check1" checked="checked">
@@ -564,7 +1543,6 @@
                 сайту</a> (включаючи згоду на отримання інформаційних повідомлень про програму)
             </label>
           </div>
-
           <div class="btn-wrap">
             <button type="submit" class="btn btn-xl btn-color me-4*" name="submit">
               <b>Зареєструватися</b>
@@ -811,6 +1789,8 @@
 <script src="bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/jquery.inputmask.js"></script>
+<script src="js/jquery.chained.js"></script>
 <script src="js/map.js"></script>
 <script src="js/scripts.js"></script>
 </body>
