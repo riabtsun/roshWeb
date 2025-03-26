@@ -186,6 +186,8 @@ table {
 
 .visitCard {
   border-radius: 14px;
+  border: 1px solid #0a8992;
+  box-shadow: #0a3622 0 1px 20px 0;
   max-width: 100%;
 }
 
