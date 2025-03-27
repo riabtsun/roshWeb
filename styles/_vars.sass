@@ -2,17 +2,47 @@ $mainTextColor: #fff
 $secondaryTextColor: #1e1e1e
 $primaryColor: #da1466
 $secondaryColor: #0a8992
+marquee
+  color: $secondaryTextColor
+  padding: 10px 0
+  font-size: 2rem
+  font-weight: 400
+  width: 100%
 
-.colorTitle
-  color: $primaryColor
-  font-size: 4.25rem
+.mainTitle
+  font-size: 1.4rem
   font-weight: 800
   letter-spacing: 2.04px
+  text-align: center
+  line-height: normal
+  text-transform: uppercase
+  margin-bottom: 20px
+  @media screen and (min-width: 1200px)
+    font-size: 3.9rem
+
+.mainTitle--light
+  @extend .mainTitle
+  color: $mainTextColor
+
+.mainTitle--color
+  @extend .mainTitle
+  color: $primaryColor
 
 .subtitle
-  font-size: 1.8125rem
-  font-weight: 900
+  font-size: 1rem
+  font-weight: 700
   line-height: normal
+  text-align: center
+  margin-bottom: 20px
+  @media screen and (min-width: 1200px)
+    font-size: 1.9rem
+
+.subtitle--light
+  @extend .subtitle
+  color: $mainTextColor
+
+.subtitle--color
+  @extend .subtitle
   color: $secondaryColor
 
 .button

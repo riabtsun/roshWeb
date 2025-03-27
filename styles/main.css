@@ -53,17 +53,55 @@ table {
   border-spacing: 0;
 }
 
-.colorTitle {
-  color: #da1466;
-  font-size: 4.25rem;
-  font-weight: 800;
-  letter-spacing: 2.04px;
+marquee {
+  color: #1e1e1e;
+  padding: 10px 0;
+  font-size: 2rem;
+  font-weight: 400;
+  width: 100%;
 }
 
-.subtitle {
-  font-size: 1.8125rem;
-  font-weight: 900;
+.mainTitle, .mainTitle--color, .mainTitle--light {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 2.04px;
+  text-align: center;
   line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 1200px) {
+  .mainTitle, .mainTitle--color, .mainTitle--light {
+    font-size: 3.9rem;
+  }
+}
+
+.mainTitle--light {
+  color: #fff;
+}
+
+.mainTitle--color {
+  color: #da1466;
+}
+
+.subtitle, .subtitle--color, .subtitle--light {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 1200px) {
+  .subtitle, .subtitle--color, .subtitle--light {
+    font-size: 1.9rem;
+  }
+}
+
+.subtitle--light {
+  color: #fff;
+}
+
+.subtitle--color {
   color: #0a8992;
 }
 
@@ -109,20 +147,6 @@ table {
   padding: 10px;
 }
 
-.mainTitle {
-  color: #fff;
-  text-align: center;
-  font-size: 1.4rem;
-  font-weight: 800;
-  line-height: normal;
-  text-transform: uppercase;
-}
-@media screen and (min-width: 768px) {
-  .mainTitle {
-    font-size: 3.9009375rem;
-  }
-}
-
 .mainText {
   color: #fff;
   text-align: center;
@@ -158,29 +182,6 @@ table {
 @media screen and (min-width: 1200px) {
   .hope-wrap {
     align-items: start;
-  }
-}
-
-.colorTitle {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-@media screen and (min-width: 1200px) {
-  .colorTitle {
-    font-size: 4.25rem;
-  }
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-bottom: 20px;
-}
-@media screen and (min-width: 1200px) {
-  .subtitle {
-    font-size: 1.8125rem;
   }
 }
 
@@ -311,10 +312,11 @@ table {
 .goods .accordion-button:not(.collapsed) {
   background: #7eeff7;
 }
-
-.subtitle--light,
-.colorTitle--light {
+.goods .subtitle--light,
+.goods .colorTitle--light {
   color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .btn-accordion {
@@ -483,8 +485,6 @@ table {
 }
 @media screen and (min-width: 1200px) {
   .faq__wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "first second fourth" "fifth second third" "sixth seventh eighth";
   }
 }
@@ -494,39 +494,14 @@ table {
   box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.15);
   padding: 20px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  row-gap: 10px;
 }
 .faq__item-text {
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   line-height: normal;
-}
-.faq__item:nth-child(1) {
-  grid-area: first;
-  flex-direction: column;
-}
-.faq__item:nth-child(2) {
-  grid-area: second;
-}
-.faq__item:nth-child(3) {
-  grid-area: third;
-}
-.faq__item:nth-child(4) {
-  grid-area: fourth;
-}
-.faq__item:nth-child(5) {
-  grid-area: fifth;
-}
-.faq__item:nth-child(6) {
-  grid-area: sixth;
-}
-.faq__item:nth-child(7) {
-  grid-area: seventh;
-}
-.faq__item:nth-child(8) {
-  grid-area: eighth;
 }
 
 a.faq__item-text {
@@ -543,6 +518,7 @@ a.faq__item-text:hover {
 .footer__images {
   display: flex;
   justify-content: center;
+  align-items: center;
   column-gap: 20px;
   margin-bottom: 20px;
 }
