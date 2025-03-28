@@ -284,11 +284,8 @@ marquee {
   }
 }
 .steps-list__link {
-  text-decoration: none;
   transition: 0.3s;
   color: #fff;
-}
-.steps-list__link:hover {
   text-decoration: underline;
 }
 .steps-list__notation {
