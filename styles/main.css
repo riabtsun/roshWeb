@@ -83,8 +83,7 @@ marquee {
   color: #da1466;
 }
 
-.colorTitle--secondary {
-  color: #0a8992;
+.secondary-title, .secondary-title--light, .secondary-title--color {
   font-size: 1.8rem;
   font-weight: 900;
   line-height: normal;
@@ -93,9 +92,17 @@ marquee {
   margin: 0 auto 20px auto;
 }
 @media screen and (min-width: 768px) {
-  .colorTitle--secondary {
+  .secondary-title, .secondary-title--light, .secondary-title--color {
     font-size: 2.625rem;
   }
+}
+
+.secondary-title--color {
+  color: #0a8992;
+}
+
+.secondary-title--light {
+  color: #fff;
 }
 
 .subtitle, .subtitle--color, .subtitle--light {
@@ -104,6 +111,7 @@ marquee {
   line-height: normal;
   text-align: center;
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
 @media screen and (min-width: 1200px) {
   .subtitle, .subtitle--color, .subtitle--light {
@@ -278,7 +286,10 @@ marquee {
 .steps-list__link {
   text-decoration: none;
   transition: 0.3s;
-  color: #da1466;
+  color: #fff;
+}
+.steps-list__link:hover {
+  text-decoration: underline;
 }
 .steps-list__notation {
   margin-top: 40px;
@@ -667,6 +678,8 @@ a.faq__item-text:hover {
 #menu {
   position: relative;
   overflow: hidden;
+  height: 380px;
+  border-radius: 14px;
 }
 
 #productModal {

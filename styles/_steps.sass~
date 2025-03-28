@@ -49,7 +49,7 @@
     transition: .3s
     color: $mainTextColor
     &:hover
-      text-decoration: underline
+      text-decoration: none
   &__notation
     margin-top: 40px
     color: $mainTextColor

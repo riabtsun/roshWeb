@@ -28,8 +28,7 @@ marquee
   @extend .mainTitle
   color: $primaryColor
 
-.colorTitle--secondary
-  color: #0a8992
+.secondary-title
   font-size: 1.8rem
   font-weight: 900
   line-height: normal
@@ -39,12 +38,21 @@ marquee
   @media screen and (min-width: 768px)
     font-size: 2.625rem
 
+.secondary-title--color
+  @extend .secondary-title
+  color: $secondaryColor
+
+.secondary-title--light
+  @extend .secondary-title
+  color: $mainTextColor
+
 .subtitle
   font-size: 1rem
   font-weight: 700
   line-height: normal
   text-align: center
   margin-bottom: 20px
+  text-transform: uppercase
   @media screen and (min-width: 1200px)
     font-size: 1.9rem
 
