@@ -135,7 +135,7 @@
     <div class="row">
       <div class="col-12 rules__title">
         <p class="subtitle--color">Правила, умови та порядок участі в програмі</p>
-        <h2 class="colorTitle--secondary">«За межі обмежень, за межі РС»</h2>
+        <h2 class="secondary-title">«За межі обмежень, за межі РС»</h2>
       </div>
       <div class="col-12">
         <ol class="rules__list">

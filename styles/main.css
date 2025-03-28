@@ -66,7 +66,6 @@ marquee {
   font-weight: 800;
   letter-spacing: 2.04px;
   text-align: center;
-  line-height: normal;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -82,6 +81,21 @@ marquee {
 
 .mainTitle--color {
   color: #da1466;
+}
+
+.colorTitle--secondary {
+  color: #0a8992;
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 auto 20px auto;
+}
+@media screen and (min-width: 768px) {
+  .colorTitle--secondary {
+    font-size: 2.625rem;
+  }
 }
 
 .subtitle, .subtitle--color, .subtitle--light {
@@ -120,7 +134,7 @@ marquee {
   width: fit-content;
 }
 .button:hover {
-  background: #ab1050;
+  background: rgb(171.2857142857, 15.7142857143, 80.1428571429);
 }
 
 .topSection {
@@ -333,7 +347,7 @@ marquee {
   width: fit-content;
 }
 .btn-accordion:hover {
-  background: #ab1050;
+  background: rgb(171.2857142857, 15.7142857143, 80.1428571429);
   color: #fff;
 }
 
@@ -687,21 +701,6 @@ a.faq__item-text:hover {
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
-}
-
-.colorTitle--secondary {
-  color: #0a8992;
-  font-size: 1.8rem;
-  font-weight: 900;
-  line-height: normal;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 0 auto 20px auto;
-}
-@media screen and (min-width: 768px) {
-  .colorTitle--secondary {
-    font-size: 2.625rem;
-  }
 }
 
 .btn-color {

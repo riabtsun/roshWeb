@@ -39,6 +39,7 @@ marquee
   @media screen and (min-width: 768px)
     font-size: 2.625rem
 
+
 .subtitle
   font-size: 1rem
   font-weight: 700
