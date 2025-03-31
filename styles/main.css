@@ -142,7 +142,7 @@ marquee {
   width: fit-content;
 }
 .button:hover {
-  background: rgb(171.2857142857, 15.7142857143, 80.1428571429);
+  background: #ab1050;
 }
 
 .topSection {
@@ -355,7 +355,7 @@ marquee {
   width: fit-content;
 }
 .btn-accordion:hover {
-  background: rgb(171.2857142857, 15.7142857143, 80.1428571429);
+  background: #ab1050;
   color: #fff;
 }
 
