@@ -314,12 +314,23 @@ marquee {
 }
 
 .rules__list {
-  list-style: decimal;
+  list-style: none;
   padding: 20px;
 }
 .rules__list-item {
   color: #1e1e1e;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+.rules__list h5 {
+  font-weight: 500;
+}
+.rules__list h4 {
+  font-weight: 600;
+}
+
+.rules__list--marked {
+  list-style: initial;
+  margin-left: 20px;
 }
 
 .goods {
